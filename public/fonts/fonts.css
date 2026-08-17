@@ -1,0 +1,138 @@
+/* ─────────────────────────────────────────────
+   Video — 5 weights, regular + condensed
+   ───────────────────────────────────────────── */
+
+@font-face {
+  font-family: 'Video';
+  src: url('./video/Video-Light.woff2') format('woff2'),
+       url('./video/Video-Light.woff')  format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Video';
+  src: url('./video/Video-Regular.woff2') format('woff2'),
+       url('./video/Video-Regular.woff')  format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Video';
+  src: url('./video/Video-Medium.woff2') format('woff2'),
+       url('./video/Video-Medium.woff')  format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Video';
+  src: url('./video/Video-SemiBold.woff2') format('woff2'),
+       url('./video/Video-SemiBold.woff')  format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Video';
+  src: url('./video/Video-Bold.woff2') format('woff2'),
+       url('./video/Video-Bold.woff')  format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Condensed variant — separate family name */
+@font-face {
+  font-family: 'Video Cond';
+  src: url('./video/VideoCond-Light.woff2') format('woff2'),
+       url('./video/VideoCond-Light.woff')  format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Video Cond';
+  src: url('./video/VideoCond-Regular.woff2') format('woff2'),
+       url('./video/VideoCond-Regular.woff')  format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Video Cond';
+  src: url('./video/VideoCond-Medium.woff2') format('woff2'),
+       url('./video/VideoCond-Medium.woff')  format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Video Cond';
+  src: url('./video/VideoCond-SemiBold.woff2') format('woff2'),
+       url('./video/VideoCond-SemiBold.woff')  format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Video Cond';
+  src: url('./video/VideoCond-Bold.woff2') format('woff2'),
+       url('./video/VideoCond-Bold.woff')  format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─────────────────────────────────────────────
+   Moret — 5 weights (upright)
+   ───────────────────────────────────────────── */
+
+@font-face {
+  font-family: 'Moret';
+  src: url('./moret/Moret-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Moret';
+  src: url('./moret/Moret-Book.otf') format('opentype');
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Moret';
+  src: url('./moret/Moret-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Moret';
+  src: url('./moret/Moret-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Moret';
+  src: url('./moret/Moret-Extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
