@@ -1,24 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Lora } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const lora = Lora({
+  variable: "--font-lora",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Coming Soon | LaunchCraft - Industry Solutions",
+    default: "LaunchCraft — Web Development, AI Automation & Brand Identity",
     template: "%s | LaunchCraft",
   },
   description:
-    "LaunchCraft is coming soon. We provide web development, AI automation, and logo & brand identity services across India. Visit launchcraft.in.",
+    "LaunchCraft delivers custom web development, AI automation, and brand identity services across India. 4+ years of experience, 40+ projects delivered.",
   robots: { index: true, follow: true },
 };
 
@@ -26,9 +23,22 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${lora.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <head>
+        <link rel="preconnect" href="https://api.fontshare.com" />
+        <link
+          rel="stylesheet"
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
+        />
+      </head>
+      <body className="min-h-full flex flex-col">
+        <Navbar />
+        <div className="flex-1 flex flex-col">
+          {children}
+        </div>
+        <Footer />
+      </body>
     </html>
   );
 }
