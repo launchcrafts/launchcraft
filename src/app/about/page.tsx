@@ -5,12 +5,13 @@ import FadeIn from "@/components/FadeIn";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet Madhu Sudhan, founder of LaunchCraft — a full-stack developer with 4+ years of experience and 40+ projects delivered across India and the UK.",
+    "Meet the founders of LaunchCraft — Madhu Sudhan (full-stack developer) and Durga Jaya Ram (AI developer) — combining 4+ years of web development and AI/ML expertise.",
 };
 
 const skills = [
   "TypeScript", "Next.js", "React", "Node.js",
-  "Tailwind CSS", "Framer Motion", "PostgreSQL", "Figma",
+  "Python", "TensorFlow", "Machine Learning", "Computer Vision",
+  "Tailwind CSS", "Framer Motion", "PostgreSQL", "C# / .NET",
   "OpenAI API", "SEO & Schema", "Vercel / CI-CD", "UI / UX Design",
 ];
 
@@ -40,112 +41,191 @@ const timeline = [
   { year: "2025", event: "40+ projects delivered. Full-service digital agency, fully operational." },
 ];
 
+const madhuStats = [
+  { label: "Experience", value: "4+ Years" },
+  { label: "Projects", value: "40+ Delivered" },
+  { label: "Location", value: "India" },
+  { label: "Speciality", value: "Web Dev / AI Automation" },
+];
+
+const durgaStats = [
+  { label: "Background", value: "AI / ML / Full-Stack" },
+  { label: "Current", value: "Cognizant (AV Systems)" },
+  { label: "Location", value: "Hyderabad, India" },
+  { label: "Speciality", value: "Machine Learning / CV" },
+];
+
 export default function AboutPage() {
   return (
     <main className="flex flex-col">
 
       {/* ── Page Header ────────────────────────────────── */}
-      <section className="py-20 px-6 text-center border-b border-hairline">
+      <section className="py-16 sm:py-20 px-6 text-center border-b border-hairline">
         <FadeIn>
           <p className="text-[10px] tracking-[0.35em] uppercase text-brand-green mb-4">
             Who We Are
           </p>
-          <h1 className="text-4xl sm:text-5xl italic text-foreground mb-6">
-            Built by a developer.<br />Driven by results.
+          <h1 className="text-3xl sm:text-5xl italic text-foreground mb-6">
+            Built by developers.<br />Driven by results.
           </h1>
           <div className="w-12 h-px bg-hairline mx-auto mb-6" />
           <p
             className="text-sm text-muted max-w-lg mx-auto leading-relaxed"
             style={{ fontFamily: "var(--font-secondary)" }}
           >
-            LaunchCraft is a boutique digital agency founded by Madhu Sudhan — combining
-            technical depth, design sensibility, and 4+ years of real-world project experience.
+            LaunchCraft is a boutique digital agency built by two developers — combining
+            web development expertise, AI engineering, and 4+ years of real-world project experience.
           </p>
         </FadeIn>
       </section>
 
-      {/* ── Profile ────────────────────────────────────── */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto grid sm:grid-cols-[1fr_2fr] gap-12 items-start">
-          <FadeIn from="left" className="flex flex-col items-center sm:items-start gap-6">
-            <div className="w-28 h-28 rounded-full bg-foreground flex items-center justify-center flex-shrink-0">
-              <span className="text-3xl italic text-background" style={{ letterSpacing: "0.05em" }}>
-                MS
-              </span>
-            </div>
-            <div>
-              <h2 className="text-2xl italic text-foreground mb-1">Madhu Sudhan</h2>
-              <p
-                className="text-[10px] tracking-[0.2em] uppercase text-brand-green"
-                style={{ fontFamily: "var(--font-secondary)" }}
-              >
-                Founder &amp; Lead Developer
-              </p>
-            </div>
-            <div className="flex flex-col gap-0 w-full">
-              {[
-                { label: "Experience", value: "4+ Years" },
-                { label: "Projects", value: "40+ Delivered" },
-                { label: "Location", value: "India" },
-                { label: "Availability", value: "Open to Projects" },
-              ].map((item) => (
-                <div key={item.label} className="flex justify-between items-center py-3 border-b border-hairline">
-                  <span
-                    className="text-[10px] tracking-[0.2em] uppercase text-muted"
-                    style={{ fontFamily: "var(--font-secondary)" }}
-                  >
-                    {item.label}
-                  </span>
-                  <span
-                    className="text-xs text-foreground"
-                    style={{ fontFamily: "var(--font-secondary)" }}
-                  >
-                    {item.value}
-                  </span>
-                </div>
-              ))}
-            </div>
+      {/* ── Founders ───────────────────────────────────── */}
+      <section className="py-16 sm:py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn className="text-center mb-14">
+            <p className="text-[10px] tracking-[0.35em] uppercase text-brand-green mb-4">
+              The Team
+            </p>
+            <h2 className="text-3xl sm:text-4xl italic text-foreground">Meet the Founders</h2>
           </FadeIn>
 
-          <FadeIn delay={150} className="flex flex-col gap-6">
-            <p
-              className="text-sm text-muted leading-relaxed"
-              style={{ fontFamily: "var(--font-secondary)" }}
-            >
-              I started coding in 2021 with a single goal: build things that actually work for businesses.
-              Over four years, I&rsquo;ve delivered more than 40 projects — from pediatric healthcare centers
-              in Vijayawada to doctor-led aesthetic clinics in Newcastle, UK.
-            </p>
-            <p
-              className="text-sm text-muted leading-relaxed"
-              style={{ fontFamily: "var(--font-secondary)" }}
-            >
-              LaunchCraft was founded on the belief that small and mid-sized businesses deserve agency-quality
-              digital products — without the agency bureaucracy. Every project gets my full attention,
-              from first call to final deployment.
-            </p>
-            <p
-              className="text-sm text-muted leading-relaxed"
-              style={{ fontFamily: "var(--font-secondary)" }}
-            >
-              My work spans web development, AI-powered automation, and brand identity. I use modern tooling —
-              Next.js, React, TypeScript, Tailwind CSS — and stay current with AI integrations to give clients
-              an edge their competitors haven&rsquo;t discovered yet.
-            </p>
-            <div className="pt-4">
+          <div className="grid md:grid-cols-2 gap-px bg-hairline border border-hairline">
+
+            {/* ── Madhu Sudhan ── */}
+            <FadeIn from="left" className="bg-background p-6 sm:p-8 flex flex-col gap-6">
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 rounded-full bg-foreground flex items-center justify-center flex-shrink-0">
+                  <span className="text-xl italic text-background">MS</span>
+                </div>
+                <div>
+                  <h2 className="text-xl italic text-foreground">Madhu Sudhan</h2>
+                  <p
+                    className="text-[10px] tracking-[0.2em] uppercase text-brand-green mt-0.5"
+                    style={{ fontFamily: "var(--font-secondary)" }}
+                  >
+                    Founder &amp; Lead Developer
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-0">
+                {madhuStats.map((item) => (
+                  <div key={item.label} className="flex justify-between items-center py-3 border-b border-hairline">
+                    <span
+                      className="text-[10px] tracking-[0.2em] uppercase text-muted"
+                      style={{ fontFamily: "var(--font-secondary)" }}
+                    >
+                      {item.label}
+                    </span>
+                    <span
+                      className="text-xs text-foreground"
+                      style={{ fontFamily: "var(--font-secondary)" }}
+                    >
+                      {item.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-col gap-4">
+                <p
+                  className="text-sm text-muted leading-relaxed"
+                  style={{ fontFamily: "var(--font-secondary)" }}
+                >
+                  I started coding in 2021 with a single goal: build things that actually work for businesses.
+                  Over four years, I&rsquo;ve delivered more than 40 projects — from pediatric healthcare centers
+                  in Vijayawada to doctor-led aesthetic clinics in Newcastle, UK.
+                </p>
+                <p
+                  className="text-sm text-muted leading-relaxed"
+                  style={{ fontFamily: "var(--font-secondary)" }}
+                >
+                  LaunchCraft was founded on the belief that small and mid-sized businesses deserve agency-quality
+                  digital products — without the agency bureaucracy.
+                </p>
+              </div>
+
               <Link
                 href="/portfolio"
                 className="text-[10px] tracking-[0.25em] uppercase text-brand-orange hover:text-foreground transition-colors duration-300"
+                style={{ fontFamily: "var(--font-secondary)" }}
               >
-                View the Portfolio &rarr;
+                View Portfolio &rarr;
               </Link>
-            </div>
-          </FadeIn>
+            </FadeIn>
+
+            {/* ── Durga Jaya Ram ── */}
+            <FadeIn delay={150} className="bg-background p-6 sm:p-8 flex flex-col gap-6">
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 rounded-full bg-foreground flex items-center justify-center flex-shrink-0">
+                  <span className="text-xl italic text-background">DJ</span>
+                </div>
+                <div>
+                  <h2 className="text-xl italic text-foreground">Durga Jaya Ram</h2>
+                  <p
+                    className="text-[10px] tracking-[0.2em] uppercase text-brand-green mt-0.5"
+                    style={{ fontFamily: "var(--font-secondary)" }}
+                  >
+                    Co-Founder &amp; AI Developer
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-0">
+                {durgaStats.map((item) => (
+                  <div key={item.label} className="flex justify-between items-center py-3 border-b border-hairline">
+                    <span
+                      className="text-[10px] tracking-[0.2em] uppercase text-muted"
+                      style={{ fontFamily: "var(--font-secondary)" }}
+                    >
+                      {item.label}
+                    </span>
+                    <span
+                      className="text-xs text-foreground"
+                      style={{ fontFamily: "var(--font-secondary)" }}
+                    >
+                      {item.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-col gap-4">
+                <p
+                  className="text-sm text-muted leading-relaxed"
+                  style={{ fontFamily: "var(--font-secondary)" }}
+                >
+                  AI and software developer with expertise in machine learning, computer vision, and
+                  full-stack systems. From building real-time sign language detection on Raspberry Pi
+                  to working on autonomous vehicle algorithms at Cognizant, Durga brings deep AI/ML
+                  engineering capability to LaunchCraft&rsquo;s client solutions.
+                </p>
+                <p
+                  className="text-sm text-muted leading-relaxed"
+                  style={{ fontFamily: "var(--font-secondary)" }}
+                >
+                  His background in intelligent systems, IoT, and data-driven development gives
+                  LaunchCraft an edge in building automation and AI-powered products that actually work.
+                </p>
+              </div>
+
+              <a
+                href="https://linkedin.com/in/durgajayaram"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10px] tracking-[0.25em] uppercase text-brand-orange hover:text-foreground transition-colors duration-300"
+                style={{ fontFamily: "var(--font-secondary)" }}
+              >
+                LinkedIn Profile &rarr;
+              </a>
+            </FadeIn>
+
+          </div>
         </div>
       </section>
 
       {/* ── Timeline ───────────────────────────────────── */}
-      <section className="py-20 px-6 border-t border-hairline">
+      <section className="py-16 sm:py-20 px-6 border-t border-hairline">
         <div className="max-w-4xl mx-auto">
           <FadeIn className="text-center mb-14">
             <p className="text-[10px] tracking-[0.35em] uppercase text-brand-green mb-4">
@@ -155,7 +235,7 @@ export default function AboutPage() {
           </FadeIn>
           <div className="space-y-0">
             {timeline.map((item, i) => (
-              <FadeIn key={item.year} delay={i * 80} className="flex gap-8 py-6 border-b border-hairline last:border-0">
+              <FadeIn key={item.year} delay={i * 80} className="flex gap-6 sm:gap-8 py-6 border-b border-hairline last:border-0">
                 <span className="text-lg italic text-brand-green flex-shrink-0 w-12">{item.year}</span>
                 <p
                   className="text-sm text-muted leading-relaxed"
@@ -170,7 +250,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Skills ─────────────────────────────────────── */}
-      <section className="py-20 px-6 border-t border-hairline">
+      <section className="py-16 sm:py-20 px-6 border-t border-hairline">
         <div className="max-w-4xl mx-auto">
           <FadeIn className="text-center mb-14">
             <p className="text-[10px] tracking-[0.35em] uppercase text-brand-green mb-4">
@@ -193,7 +273,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Values ─────────────────────────────────────── */}
-      <section className="py-20 px-6 border-t border-hairline bg-foreground">
+      <section className="py-16 sm:py-20 px-6 border-t border-hairline bg-foreground">
         <div className="max-w-5xl mx-auto">
           <FadeIn className="text-center mb-14">
             <p className="text-[10px] tracking-[0.35em] uppercase text-brand-green mb-4">
@@ -203,7 +283,7 @@ export default function AboutPage() {
           </FadeIn>
           <div className="grid sm:grid-cols-3 gap-px bg-[#2a2a2a] border border-[#2a2a2a]">
             {values.map((v, i) => (
-              <FadeIn key={v.title} delay={i * 120} className="bg-foreground p-8">
+              <FadeIn key={v.title} delay={i * 120} className="bg-foreground p-6 sm:p-8">
                 <h3 className="text-lg italic text-background mb-4">{v.title}</h3>
                 <div className="w-6 h-px bg-brand-green mb-4" />
                 <p
@@ -219,7 +299,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── CTA ────────────────────────────────────────── */}
-      <section className="py-24 px-6 border-t border-hairline text-center">
+      <section className="py-20 sm:py-24 px-6 border-t border-hairline text-center">
         <FadeIn>
           <p className="text-[10px] tracking-[0.35em] uppercase text-brand-green mb-6">
             Work With Us

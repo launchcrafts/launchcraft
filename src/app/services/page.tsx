@@ -147,7 +147,7 @@ export default function ServicesPage() {
                 </div>
               </FadeIn>
 
-              <FadeIn delay={150} className={`grid grid-cols-2 gap-px ${i % 2 === 1 ? "bg-[#2a2a2a]" : "bg-hairline"} border ${i % 2 === 1 ? "border-[#2a2a2a]" : "border-hairline"}`}>
+              <FadeIn delay={150} className={`grid grid-cols-1 sm:grid-cols-2 gap-px ${i % 2 === 1 ? "bg-[#2a2a2a]" : "bg-hairline"} border ${i % 2 === 1 ? "border-[#2a2a2a]" : "border-hairline"}`}>
                 {s.features.map((f) => (
                   <div
                     key={f.title}

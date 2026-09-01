@@ -83,7 +83,7 @@ export default function Home() {
           >
             Est. 2021 &nbsp;&middot;&nbsp; 4+ Years &nbsp;&middot;&nbsp; 40+ Projects
           </p>
-          <h1 className="text-5xl sm:text-6xl leading-[1.15] text-foreground italic mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl leading-[1.15] text-foreground italic mb-6">
             We craft digital<br />experiences that last.
           </h1>
           <p
@@ -276,35 +276,71 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Founder Teaser ───────────────────────────────── */}
+      {/* ── Team Teaser ──────────────────────────────────── */}
       <section className="border-t border-hairline py-16 px-6">
-        <FadeIn className="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-8">
-          <div className="w-20 h-20 rounded-full bg-foreground flex items-center justify-center flex-shrink-0">
-            <span className="text-xl italic text-background">MS</span>
-          </div>
-          <div className="flex-1">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
             <p
-              className="text-[10px] tracking-[0.25em] uppercase text-brand-green mb-1"
+              className="text-[10px] tracking-[0.35em] uppercase text-brand-green mb-8 text-center"
               style={{ fontFamily: "var(--font-secondary)" }}
             >
-              Founder &middot; LaunchCraft
+              The Founders &middot; LaunchCraft
             </p>
-            <h3 className="text-2xl italic text-foreground mb-2">Madhu Sudhan</h3>
-            <p
-              className="text-sm text-muted leading-relaxed max-w-lg"
+          </FadeIn>
+          <div className="grid sm:grid-cols-2 gap-px bg-hairline border border-hairline">
+            {/* Madhu */}
+            <FadeIn className="bg-background p-6 flex items-start gap-5">
+              <div className="w-14 h-14 rounded-full bg-foreground flex items-center justify-center flex-shrink-0">
+                <span className="text-base italic text-background">MS</span>
+              </div>
+              <div>
+                <h3 className="text-xl italic text-foreground mb-1">Madhu Sudhan</h3>
+                <p
+                  className="text-[10px] tracking-[0.2em] uppercase text-brand-green mb-3"
+                  style={{ fontFamily: "var(--font-secondary)" }}
+                >
+                  Founder &amp; Lead Developer
+                </p>
+                <p
+                  className="text-sm text-muted leading-relaxed"
+                  style={{ fontFamily: "var(--font-secondary)" }}
+                >
+                  Full-stack developer with 4+ years and 40+ projects spanning healthcare, e-commerce, and SaaS — across India and the UK.
+                </p>
+              </div>
+            </FadeIn>
+            {/* Durga */}
+            <FadeIn delay={100} className="bg-background p-6 flex items-start gap-5">
+              <div className="w-14 h-14 rounded-full bg-foreground flex items-center justify-center flex-shrink-0">
+                <span className="text-base italic text-background">DJ</span>
+              </div>
+              <div>
+                <h3 className="text-xl italic text-foreground mb-1">Durga Jaya Ram</h3>
+                <p
+                  className="text-[10px] tracking-[0.2em] uppercase text-brand-green mb-3"
+                  style={{ fontFamily: "var(--font-secondary)" }}
+                >
+                  Co-Founder &amp; AI Developer
+                </p>
+                <p
+                  className="text-sm text-muted leading-relaxed"
+                  style={{ fontFamily: "var(--font-secondary)" }}
+                >
+                  AI &amp; ML engineer specialising in machine learning, computer vision, and intelligent systems.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+          <FadeIn className="text-center mt-8">
+            <Link
+              href="/about"
+              className="inline-block px-6 py-3 border border-hairline text-[10px] tracking-[0.2em] uppercase text-foreground hover:border-brand-green hover:text-brand-green transition-colors duration-300"
               style={{ fontFamily: "var(--font-secondary)" }}
             >
-              Full-stack developer with 4+ years and 40+ projects spanning healthcare, e-commerce, and SaaS — across India and the UK.
-            </p>
-          </div>
-          <Link
-            href="/about"
-            className="px-6 py-3 border border-hairline text-[10px] tracking-[0.2em] uppercase text-foreground hover:border-brand-green hover:text-brand-green transition-colors duration-300 flex-shrink-0"
-            style={{ fontFamily: "var(--font-secondary)" }}
-          >
-            About the Founder
-          </Link>
-        </FadeIn>
+              Meet the Team
+            </Link>
+          </FadeIn>
+        </div>
       </section>
 
       {/* ── CTA ──────────────────────────────────────────── */}
