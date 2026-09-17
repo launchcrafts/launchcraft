@@ -44,6 +44,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           rel="stylesheet"
           href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
         />
+        <meta name="google-site-verification" content="5VSx2qnZ_2qwke-6YYPQ9cZganCFjUyqOartIZvdU2s" />
       </head>
       <body className="min-h-full flex flex-col">
         <Navbar />
