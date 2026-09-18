@@ -3,26 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import LoadingScreen from "@/components/LoadingScreen";
 import FadeIn from "@/components/FadeIn";
+import { projectsByDivision } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "LaunchCraft — Web Development, AI Automation & Brand Identity",
   description:
     "LaunchCraft delivers custom web development, AI automation, and brand identity services. 4+ years of experience, 40+ projects delivered across India and the UK.",
 };
-
-// ── Portfolio screenshots ─────────────────────────────────────────────────────
-const BASE = "https://madhusdhan.vercel.app/static/media";
-const galleryImages = [
-  `${BASE}/project7.ccea968da61346de14e4.png`,
-  `${BASE}/project8.7066cb6a83fcd61d4e30.png`,
-  `${BASE}/project9.61e9a52e12cac721c56a.png`,
-  `${BASE}/project10.b7da9dfeef4c40223df8.png`,
-  `${BASE}/project11.389f673dc79444fcbe5c.png`,
-  `${BASE}/project12.219be3ad77baaa2dd7b8.png`,
-  `${BASE}/project1.099e170a6e53cd15a3b5.png`,
-  `${BASE}/project2.3d9aba184456c6165615.png`,
-  `${BASE}/project3.d705528777757ec7c711.png`,
-];
 
 const marqueeItems = [
   "Web Development",
@@ -38,21 +25,21 @@ const marqueeItems = [
 
 const services = [
   {
-    symbol: "◈",
+    symbol: "\u25C8",
     title: "Web Development",
     description:
       "Custom Next.js & React websites — mobile-first, SEO-optimized, and built to convert.",
     features: ["Next.js / React", "Mobile-First", "SEO Optimized", "Performance-First"],
   },
   {
-    symbol: "◉",
+    symbol: "\u25C9",
     title: "AI Automation",
     description:
       "Intelligent chatbots, workflows, and data pipelines that scale your operations automatically.",
     features: ["Custom Chatbots", "Workflow Automation", "API Integrations", "Data Processing"],
   },
   {
-    symbol: "◎",
+    symbol: "\u25CE",
     title: "Brand Identity",
     description:
       "Strategic logos, color systems, and brand guidelines that make you unforgettable.",
@@ -66,6 +53,12 @@ const process = [
   { step: "03", title: "Build", description: "Clean code with regular previews — no surprises." },
   { step: "04", title: "Launch", description: "Deploy, test, go live — then we stay on hand for support." },
 ];
+
+// Show international projects first, then fill with other official domains
+const galleryProjects = [
+  ...projectsByDivision.international,
+  ...projectsByDivision.otherOfficial,
+].slice(0, 9);
 
 export default function Home() {
   const doubled = [...marqueeItems, ...marqueeItems];
@@ -150,17 +143,30 @@ export default function Home() {
 
           {/* 3×3 grid — aspect-[16/10] shows the full top of each screenshot */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-            {galleryImages.map((src, i) => (
-              <FadeIn key={i} delay={i * 75}>
-                <Link href="/portfolio" className="block group">
+            {galleryProjects.map((project, i) => (
+              <FadeIn key={project.id} delay={i * 75}>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group"
+                >
                   <div className="relative overflow-hidden aspect-[16/10] bg-foreground">
-                    <Image
-                      src={src}
-                      alt={`Project ${i + 1}`}
-                      fill
-                      sizes="(max-width: 640px) 50vw, 33vw"
-                      className="object-cover object-top group-hover:scale-[1.04] transition-transform duration-700"
-                    />
+                    {project.image ? (
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        sizes="(max-width: 640px) 50vw, 33vw"
+                        className="object-cover object-top group-hover:scale-[1.04] transition-transform duration-700"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-xs italic text-muted text-center px-3" style={{ fontFamily: "var(--font-secondary)" }}>
+                          {project.title}
+                        </span>
+                      </div>
+                    )}
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 transition-colors duration-400" />
                     {/* Hover label */}
@@ -169,11 +175,11 @@ export default function Home() {
                         className="text-[10px] tracking-[0.2em] uppercase text-background"
                         style={{ fontFamily: "var(--font-secondary)" }}
                       >
-                        View Project &rarr;
+                        {project.title} &rarr;
                       </span>
                     </div>
                   </div>
-                </Link>
+                </a>
               </FadeIn>
             ))}
           </div>
@@ -276,70 +282,63 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Team Teaser ──────────────────────────────────── */}
-      <section className="border-t border-hairline py-16 px-6">
+      {/* ── Latest Articles ───────────────────────────────── */}
+      <section className="py-24 px-6 border-t border-hairline">
         <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <p
-              className="text-[10px] tracking-[0.35em] uppercase text-brand-green mb-8 text-center"
-              style={{ fontFamily: "var(--font-secondary)" }}
-            >
-              The Founders &middot; LaunchCraft
-            </p>
-          </FadeIn>
-          <div className="grid sm:grid-cols-2 gap-px bg-hairline border border-hairline">
-            {/* Madhu */}
-            <FadeIn className="bg-background p-6 flex items-start gap-5">
-              <div className="w-14 h-14 rounded-full bg-foreground flex items-center justify-center flex-shrink-0">
-                <span className="text-base italic text-background">MS</span>
-              </div>
-              <div>
-                <h3 className="text-xl italic text-foreground mb-1">Madhu Sudhan</h3>
-                <p
-                  className="text-[10px] tracking-[0.2em] uppercase text-brand-green mb-3"
-                  style={{ fontFamily: "var(--font-secondary)" }}
-                >
-                  Founder &amp; Lead Developer
-                </p>
-                <p
-                  className="text-sm text-muted leading-relaxed"
-                  style={{ fontFamily: "var(--font-secondary)" }}
-                >
-                  Full-stack developer with 4+ years and 40+ projects spanning healthcare, e-commerce, and SaaS — across India and the UK.
-                </p>
-              </div>
-            </FadeIn>
-            {/* Durga */}
-            <FadeIn delay={100} className="bg-background p-6 flex items-start gap-5">
-              <div className="w-14 h-14 rounded-full bg-foreground flex items-center justify-center flex-shrink-0">
-                <span className="text-base italic text-background">DJ</span>
-              </div>
-              <div>
-                <h3 className="text-xl italic text-foreground mb-1">Durga Jaya Ram</h3>
-                <p
-                  className="text-[10px] tracking-[0.2em] uppercase text-brand-green mb-3"
-                  style={{ fontFamily: "var(--font-secondary)" }}
-                >
-                  Co-Founder &amp; AI Developer
-                </p>
-                <p
-                  className="text-sm text-muted leading-relaxed"
-                  style={{ fontFamily: "var(--font-secondary)" }}
-                >
-                  AI &amp; ML engineer specialising in machine learning, computer vision, and intelligent systems.
-                </p>
-              </div>
-            </FadeIn>
-          </div>
-          <FadeIn className="text-center mt-8">
+          <FadeIn className="flex items-end justify-between mb-12">
+            <div>
+              <p className="text-[10px] tracking-[0.35em] uppercase text-brand-green mb-3">
+                Insights
+              </p>
+              <h2 className="text-4xl sm:text-5xl italic text-foreground">Latest Articles</h2>
+            </div>
             <Link
-              href="/about"
-              className="inline-block px-6 py-3 border border-hairline text-[10px] tracking-[0.2em] uppercase text-foreground hover:border-brand-green hover:text-brand-green transition-colors duration-300"
+              href="/articles"
+              className="hidden sm:inline text-[10px] tracking-[0.25em] uppercase text-muted hover:text-brand-orange transition-colors duration-300 mb-2"
               style={{ fontFamily: "var(--font-secondary)" }}
             >
-              Meet the Team
+              View All &rarr;
             </Link>
           </FadeIn>
+          <div className="grid sm:grid-cols-3 gap-px bg-hairline border border-hairline">
+            {[
+              { title: "Best Websites in the World 2026", slug: "best-websites-in-the-world", tag: "Design" },
+              { title: "Next.js vs WordPress", slug: "nextjs-vs-wordpress-for-business-websites", tag: "Web Dev" },
+              { title: "7 Local SEO Tips for India", slug: "local-seo-tips-for-small-businesses-india", tag: "SEO" },
+            ].map((a, i) => (
+              <FadeIn key={a.slug} delay={i * 100} className="bg-background p-8">
+                <span
+                  className="text-[10px] tracking-[0.15em] uppercase text-brand-green mb-4 block"
+                  style={{ fontFamily: "var(--font-secondary)" }}
+                >
+                  {a.tag}
+                </span>
+                <Link
+                  href={`/articles/${a.slug}`}
+                  className="group"
+                >
+                  <h3 className="text-lg italic text-foreground group-hover:text-brand-green transition-colors duration-300 mb-4">
+                    {a.title}
+                  </h3>
+                  <span
+                    className="text-[10px] tracking-[0.2em] uppercase text-muted group-hover:text-brand-orange transition-colors duration-300"
+                    style={{ fontFamily: "var(--font-secondary)" }}
+                  >
+                    Read &rarr;
+                  </span>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+          <div className="text-center mt-10 sm:hidden">
+            <Link
+              href="/articles"
+              className="text-[10px] tracking-[0.25em] uppercase text-brand-orange"
+              style={{ fontFamily: "var(--font-secondary)" }}
+            >
+              View All Articles &rarr;
+            </Link>
+          </div>
         </div>
       </section>
 

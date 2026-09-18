@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { articles } from "@/data/articles";
 
 const baseUrl = "https://launchcraft.in";
 
@@ -12,6 +13,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const articleRoutes = articles.map((article) => ({
+    url: `${baseUrl}/articles/${article.slug}`,
+    lastModified: new Date(article.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   return [
     {
       url: baseUrl,
@@ -19,6 +27,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    {
+      url: `${baseUrl}/articles`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
     ...cityRoutes,
+    ...articleRoutes,
   ];
 }

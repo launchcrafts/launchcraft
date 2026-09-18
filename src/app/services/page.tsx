@@ -195,6 +195,46 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* ── Related Reading ─────────────────────────────── */}
+      <section className="py-16 px-6 border-b border-hairline">
+        <div className="max-w-3xl mx-auto text-center">
+          <FadeIn>
+            <p className="text-[10px] tracking-[0.35em] uppercase text-brand-green mb-4">
+              From Our Blog
+            </p>
+            <h2 className="text-2xl sm:text-3xl italic text-foreground mb-8">Related Reading</h2>
+          </FadeIn>
+          <div className="grid sm:grid-cols-2 gap-6 text-left">
+            <FadeIn>
+              <Link
+                href="/articles/nextjs-vs-wordpress-for-business-websites"
+                className="group block border border-hairline p-6 hover:border-brand-green transition-colors duration-300"
+              >
+                <h3 className="text-base italic text-foreground group-hover:text-brand-green transition-colors duration-300 mb-2">
+                  Next.js vs WordPress
+                </h3>
+                <p className="text-xs text-muted leading-relaxed" style={{ fontFamily: "var(--font-secondary)" }}>
+                  Why we build every client site with Next.js — and when WordPress still makes sense.
+                </p>
+              </Link>
+            </FadeIn>
+            <FadeIn delay={80}>
+              <Link
+                href="/articles/why-every-clinic-needs-a-website-in-2025"
+                className="group block border border-hairline p-6 hover:border-brand-green transition-colors duration-300"
+              >
+                <h3 className="text-base italic text-foreground group-hover:text-brand-green transition-colors duration-300 mb-2">
+                  Why Every Clinic Needs a Website
+                </h3>
+                <p className="text-xs text-muted leading-relaxed" style={{ fontFamily: "var(--font-secondary)" }}>
+                  How a professional website delivers 3-5x ROI for healthcare practices.
+                </p>
+              </Link>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA ────────────────────────────────────────── */}
       <section className="py-24 px-6 text-center">
         <FadeIn>
