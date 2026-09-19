@@ -6,7 +6,27 @@ import { articles } from "@/data/articles";
 export const metadata: Metadata = {
   title: "Articles",
   description:
-    "Insights on web development, SEO, AI automation, and digital strategy from the LaunchCraft team.",
+    "Insights on web development, SEO, AI automation, and digital strategy from the LaunchCraft team. Practical guides on Next.js, WordPress, local SEO, and website design.",
+  keywords: [
+    "web development blog",
+    "SEO tips",
+    "AI automation articles",
+    "Next.js vs WordPress",
+    "local SEO India",
+    "website design guide",
+    "digital strategy",
+    "LaunchCraft blog",
+  ],
+  alternates: {
+    canonical: "https://launchcrafts.in/articles",
+  },
+  openGraph: {
+    title: "Articles — Web Development, SEO & AI Insights | LaunchCraft",
+    description:
+      "Practical advice on web development, SEO, AI automation, and growing your business online.",
+    url: "https://launchcrafts.in/articles",
+    type: "website",
+  },
 };
 
 function formatDate(dateStr: string) {
@@ -17,6 +37,15 @@ function formatDate(dateStr: string) {
   });
 }
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://launchcrafts.in" },
+    { "@type": "ListItem", position: 2, name: "Articles", item: "https://launchcrafts.in/articles" },
+  ],
+};
+
 export default function ArticlesPage() {
   const sorted = [...articles].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -24,6 +53,10 @@ export default function ArticlesPage() {
 
   return (
     <main className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Header */}
       <section className="py-20 px-6 text-center border-b border-hairline">
         <FadeIn>

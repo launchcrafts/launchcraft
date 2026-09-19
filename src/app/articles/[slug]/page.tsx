@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import FadeIn from "@/components/FadeIn";
 import { articles, getArticleBySlug } from "@/data/articles";
 
+const baseUrl = "https://launchcrafts.in";
+
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
 }
@@ -19,11 +21,23 @@ export async function generateMetadata({
   return {
     title: article.title,
     description: article.excerpt,
+    keywords: article.tags,
+    alternates: {
+      canonical: `${baseUrl}/articles/${slug}`,
+    },
     openGraph: {
       title: article.title,
       description: article.excerpt,
       type: "article",
       publishedTime: article.date,
+      url: `${baseUrl}/articles/${slug}`,
+      siteName: "LaunchCraft",
+      authors: ["LaunchCraft"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
     },
   };
 }
@@ -56,16 +70,53 @@ export default async function ArticlePage({
     headline: article.title,
     description: article.excerpt,
     datePublished: article.date,
+    dateModified: article.date,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${baseUrl}/articles/${slug}`,
+    },
     author: {
       "@type": "Organization",
       name: "LaunchCraft",
-      url: "https://launchcraft.in",
+      url: baseUrl,
     },
     publisher: {
       "@type": "Organization",
       name: "LaunchCraft",
-      url: "https://launchcraft.in",
+      url: baseUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: `${baseUrl}/assets/logo.PNG`,
+      },
     },
+    keywords: article.tags.join(", "),
+    articleSection: article.tags[0],
+    inLanguage: "en",
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: baseUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Articles",
+        item: `${baseUrl}/articles`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: article.title,
+        item: `${baseUrl}/articles/${slug}`,
+      },
+    ],
   };
 
   return (
@@ -73,6 +124,10 @@ export default async function ArticlePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       {/* Header */}

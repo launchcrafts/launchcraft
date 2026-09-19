@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ComingSoon from "@/components/ComingSoon";
 
+const baseUrl = "https://launchcrafts.in";
+
 const cities: Record<string, { name: string; state: string }> = {
   hyderabad: { name: "Hyderabad", state: "Telangana" },
   bangalore: { name: "Bangalore", state: "Karnataka" },
@@ -26,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `Web Development, AI Automation & Branding in ${city.name} - Coming Soon | LaunchCraft`,
-    description: `LaunchCraft is coming soon to ${city.name}, ${city.state}. We offer web development, AI automation, website development, and logo & brand identity services. Visit launchcraft.in.`,
+    description: `LaunchCraft is coming soon to ${city.name}, ${city.state}. We offer web development, AI automation, website development, and logo & brand identity services. Visit launchcrafts.in.`,
     keywords: [
       `web development ${city.name}`,
       `AI automation ${city.name}`,
@@ -36,13 +38,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       `LaunchCraft ${city.name}`,
       `${city.state} web services`,
       "coming soon",
-      "launchcraft.in",
+      "launchcrafts.in",
     ],
+    alternates: {
+      canonical: `${baseUrl}/solutions/${citySlug}`,
+    },
     openGraph: {
       title: `Web Development, AI Automation & Branding in ${city.name} - Coming Soon | LaunchCraft`,
       description: `LaunchCraft is coming soon to ${city.name}, ${city.state}. Web development, AI automation, and logo & brand identity services.`,
       type: "website",
-      url: `https://launchcraft.in/solutions/${citySlug}`,
+      url: `${baseUrl}/solutions/${citySlug}`,
+      siteName: "LaunchCraft",
     },
   };
 }

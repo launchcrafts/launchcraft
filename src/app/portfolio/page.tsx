@@ -7,7 +7,27 @@ import { projectsByDivision } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "40+ projects delivered by LaunchCraft — web development, AI automation, and brand identity for businesses across India and the UK.",
+    "40+ projects delivered by LaunchCraft — web development, AI automation, and brand identity for businesses across India and the UK. View our work for healthcare, e-commerce, and service businesses.",
+  keywords: [
+    "LaunchCraft portfolio",
+    "web development projects",
+    "website design examples",
+    "Next.js projects",
+    "healthcare website design",
+    "UK website development",
+    "India web development portfolio",
+    "medical aesthetics website",
+  ],
+  alternates: {
+    canonical: "https://launchcrafts.in/portfolio",
+  },
+  openGraph: {
+    title: "Portfolio — 40+ Projects Delivered | LaunchCraft",
+    description:
+      "Web development, AI automation, and brand identity projects for businesses across India and the UK.",
+    url: "https://launchcrafts.in/portfolio",
+    type: "website",
+  },
 };
 
 const featuredProjects = [
@@ -75,9 +95,22 @@ const stats = [
   { num: "5★",  label: "Client Rating" },
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://launchcrafts.in" },
+    { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://launchcrafts.in/portfolio" },
+  ],
+};
+
 export default function PortfolioPage() {
   return (
     <main className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
 
       {/* ── Page Header ────────────────────────────────── */}
       <section className="py-20 px-6 text-center border-b border-hairline">
@@ -213,7 +246,7 @@ export default function PortfolioPage() {
                   {project.image ? (
                     <Image
                       src={project.image}
-                      alt={project.title}
+                      alt={`${project.title} — website designed by LaunchCraft`}
                       fill
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       className="object-cover object-top group-hover:scale-[1.04] transition-transform duration-600"
@@ -265,7 +298,7 @@ export default function PortfolioPage() {
                   {project.image ? (
                     <Image
                       src={project.image}
-                      alt={project.title}
+                      alt={`${project.title} — website designed by LaunchCraft`}
                       fill
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       className="object-cover object-top group-hover:scale-[1.04] transition-transform duration-600"
@@ -317,7 +350,7 @@ export default function PortfolioPage() {
                   {project.image ? (
                     <Image
                       src={project.image}
-                      alt={project.title}
+                      alt={`${project.title} — website designed by LaunchCraft`}
                       fill
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       className="object-cover object-top group-hover:scale-[1.04] transition-transform duration-600"
@@ -369,7 +402,7 @@ export default function PortfolioPage() {
                   {project.image ? (
                     <Image
                       src={project.image}
-                      alt={project.title}
+                      alt={`${project.title} — website designed by LaunchCraft`}
                       fill
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       className="object-cover object-top group-hover:scale-[1.04] transition-transform duration-600"
@@ -421,7 +454,7 @@ export default function PortfolioPage() {
                   {project.image ? (
                     <Image
                       src={project.image}
-                      alt={project.title}
+                      alt={`${project.title} — website designed by LaunchCraft`}
                       fill
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       className="object-cover object-top group-hover:scale-[1.04] transition-transform duration-600"

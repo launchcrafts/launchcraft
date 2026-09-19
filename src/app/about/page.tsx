@@ -6,6 +6,24 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Meet the founders of LaunchCraft — Madhu Sudhan (full-stack developer) and Durga Jaya Ram (AI developer) — combining 4+ years of web development and AI/ML expertise.",
+  keywords: [
+    "about LaunchCraft",
+    "web development team",
+    "Madhu Sudhan developer",
+    "Durga Jaya Ram AI developer",
+    "digital agency founders",
+    "India web development agency",
+  ],
+  alternates: {
+    canonical: "https://launchcrafts.in/about",
+  },
+  openGraph: {
+    title: "About LaunchCraft — Meet the Founders",
+    description:
+      "Meet the founders of LaunchCraft — combining 4+ years of web development and AI/ML expertise. 40+ projects delivered across India and the UK.",
+    url: "https://launchcrafts.in/about",
+    type: "website",
+  },
 };
 
 const skills = [
@@ -55,9 +73,22 @@ const durgaStats = [
   { label: "Speciality", value: "Machine Learning / CV" },
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://launchcrafts.in" },
+    { "@type": "ListItem", position: 2, name: "About", item: "https://launchcrafts.in/about" },
+  ],
+};
+
 export default function AboutPage() {
   return (
     <main className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
 
       {/* ── Page Header ────────────────────────────────── */}
       <section className="py-16 sm:py-20 px-6 text-center border-b border-hairline">

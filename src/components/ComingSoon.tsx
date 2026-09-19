@@ -36,7 +36,7 @@ export default function ComingSoon({ city }: Props) {
 
         {/* URL */}
         <p className="text-xs text-brand-orange tracking-wide">
-          launchcraft.in
+          launchcrafts.in
         </p>
 
       </div>

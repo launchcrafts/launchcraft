@@ -24,6 +24,8 @@ export default function ContactForm() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -31,9 +33,29 @@ export default function ContactForm() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Something went wrong.");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to send. Please try again.");
+    } finally {
+      setSending(false);
+    }
   }
 
   const labelClass =
@@ -45,7 +67,7 @@ export default function ContactForm() {
     return (
       <div className="flex flex-col items-start justify-center py-16">
         <p className="text-[10px] tracking-[0.35em] uppercase text-brand-green mb-4">
-          Message Received
+          Message Sent
         </p>
         <h3 className="text-2xl sm:text-3xl italic text-foreground mb-4">
           Thank you, {form.name}.
@@ -136,11 +158,21 @@ export default function ContactForm() {
         />
       </div>
 
+      {error && (
+        <p
+          className="text-sm text-red-500"
+          style={{ fontFamily: "var(--font-secondary)" }}
+        >
+          {error}
+        </p>
+      )}
+
       <button
         type="submit"
-        className="px-8 py-3 bg-foreground text-background text-[10px] tracking-[0.25em] uppercase hover:bg-brand-green transition-colors duration-300 cursor-pointer"
+        disabled={sending}
+        className="px-8 py-3 bg-foreground text-background text-[10px] tracking-[0.25em] uppercase hover:bg-brand-green transition-colors duration-300 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        Send Message &rarr;
+        {sending ? "Sending..." : "Send Message \u2192"}
       </button>
     </form>
   );

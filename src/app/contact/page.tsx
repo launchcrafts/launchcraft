@@ -5,11 +5,29 @@ import FadeIn from "@/components/FadeIn";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with LaunchCraft to discuss your web development, AI automation, or brand identity project. Response within 24 hours.",
+    "Get in touch with LaunchCraft to discuss your web development, AI automation, or brand identity project. Response within 24 hours. Serving India and the UK.",
+  keywords: [
+    "contact LaunchCraft",
+    "hire web developer",
+    "web development quote",
+    "AI automation inquiry",
+    "brand identity project",
+    "LaunchCraft contact",
+  ],
+  alternates: {
+    canonical: "https://launchcrafts.in/contact",
+  },
+  openGraph: {
+    title: "Contact LaunchCraft — Start Your Project",
+    description:
+      "Get in touch to discuss your web development, AI automation, or brand identity project. Response within 24 hours.",
+    url: "https://launchcrafts.in/contact",
+    type: "website",
+  },
 };
 
 const details = [
-  { label: "Email", value: "hello@launchcraft.in", href: "mailto:hello@launchcraft.in" },
+  { label: "Email", value: "launchcrafts.in@gmail.com", href: "mailto:launchcrafts.in@gmail.com" },
   { label: "Instagram", value: "@launchcrafts.in", href: "https://www.instagram.com/launchcrafts.in/" },
   { label: "Response Time", value: "Within 24 hours", href: null },
   { label: "Location", value: "India (Serving Globally)", href: null },
@@ -18,9 +36,22 @@ const details = [
 
 const services = ["Web Development", "AI Automation", "Brand Identity", "Full Package"];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://launchcrafts.in" },
+    { "@type": "ListItem", position: 2, name: "Contact", item: "https://launchcrafts.in/contact" },
+  ],
+};
+
 export default function ContactPage() {
   return (
     <main className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
 
       {/* ── Page Header ────────────────────────────────── */}
       <section className="py-20 px-6 text-center border-b border-hairline">

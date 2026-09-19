@@ -43,7 +43,7 @@ export default function Footer() {
             className="text-[10px] tracking-[0.15em] uppercase text-muted"
             style={{ fontFamily: "var(--font-secondary)" }}
           >
-            © 2025 LaunchCraft · launchcraft.in
+            © 2025 LaunchCraft · launchcrafts.in
           </p>
           <div className="flex items-center gap-6">
             <a

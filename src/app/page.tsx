@@ -5,10 +5,32 @@ import LoadingScreen from "@/components/LoadingScreen";
 import FadeIn from "@/components/FadeIn";
 import { projectsByDivision } from "@/data/projects";
 
+const baseUrl = "https://launchcrafts.in";
+
 export const metadata: Metadata = {
   title: "LaunchCraft — Web Development, AI Automation & Brand Identity",
   description:
     "LaunchCraft delivers custom web development, AI automation, and brand identity services. 4+ years of experience, 40+ projects delivered across India and the UK.",
+  keywords: [
+    "web development company",
+    "AI automation services",
+    "brand identity design",
+    "Next.js developer",
+    "React developer India",
+    "custom website development",
+    "digital agency",
+    "LaunchCraft",
+  ],
+  alternates: {
+    canonical: baseUrl,
+  },
+  openGraph: {
+    title: "LaunchCraft — Web Development, AI Automation & Brand Identity",
+    description:
+      "Custom web development, AI automation, and brand identity services. 40+ projects delivered across India and the UK.",
+    url: baseUrl,
+    type: "website",
+  },
 };
 
 const marqueeItems = [
@@ -60,11 +82,86 @@ const galleryProjects = [
   ...projectsByDivision.otherOfficial,
 ].slice(0, 9);
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "LaunchCraft",
+  url: baseUrl,
+  logo: `${baseUrl}/assets/logo.PNG`,
+  description:
+    "LaunchCraft is a boutique digital agency delivering custom web development, AI automation, and brand identity services across India and the UK. Founded in 2021, with 4+ years of experience and 40+ projects delivered.",
+  foundingDate: "2021",
+  founders: [
+    {
+      "@type": "Person",
+      name: "Madhu Sudhan",
+      jobTitle: "Founder & Lead Developer",
+    },
+    {
+      "@type": "Person",
+      name: "Durga Jaya Ram",
+      jobTitle: "Co-Founder & AI Developer",
+    },
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "hello@launchcrafts.in",
+    contactType: "customer service",
+    availableLanguage: ["English", "Hindi", "Telugu"],
+  },
+  sameAs: [
+    "https://www.instagram.com/launchcrafts.in/",
+  ],
+  areaServed: [
+    { "@type": "Country", name: "India" },
+    { "@type": "Country", name: "United Kingdom" },
+  ],
+  knowsAbout: [
+    "Web Development",
+    "AI Automation",
+    "Brand Identity",
+    "Next.js",
+    "React",
+    "SEO",
+    "Logo Design",
+    "Custom Chatbots",
+    "Tailwind CSS",
+  ],
+  numberOfEmployees: {
+    "@type": "QuantitativeValue",
+    minValue: 2,
+    maxValue: 10,
+  },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "LaunchCraft",
+  url: baseUrl,
+  description:
+    "LaunchCraft delivers custom web development, AI automation, and brand identity services across India and the UK.",
+  publisher: {
+    "@type": "Organization",
+    name: "LaunchCraft",
+    url: baseUrl,
+  },
+};
+
 export default function Home() {
   const doubled = [...marqueeItems, ...marqueeItems];
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+
       <LoadingScreen />
 
       {/* ── Hero ─────────────────────────────────────────── */}
@@ -155,7 +252,7 @@ export default function Home() {
                     {project.image ? (
                       <Image
                         src={project.image}
-                        alt={project.title}
+                        alt={`${project.title} — website designed by LaunchCraft`}
                         fill
                         sizes="(max-width: 640px) 50vw, 33vw"
                         className="object-cover object-top group-hover:scale-[1.04] transition-transform duration-700"

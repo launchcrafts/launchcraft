@@ -5,7 +5,29 @@ import FadeIn from "@/components/FadeIn";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Web development, AI automation, and brand identity by LaunchCraft. Custom solutions built for businesses ready to grow.",
+    "Web development, AI automation, and brand identity by LaunchCraft. Custom Next.js websites, AI chatbots, workflow automation, logo design, and brand guidelines. Solutions built for businesses ready to grow.",
+  keywords: [
+    "web development services",
+    "AI automation services",
+    "brand identity services",
+    "Next.js development",
+    "custom chatbot development",
+    "logo design India",
+    "brand guidelines",
+    "workflow automation",
+    "SEO services",
+    "LaunchCraft services",
+  ],
+  alternates: {
+    canonical: "https://launchcrafts.in/services",
+  },
+  openGraph: {
+    title: "Services — Web Development, AI Automation & Brand Identity | LaunchCraft",
+    description:
+      "Custom Next.js websites, AI chatbots, workflow automation, logo design, and brand guidelines. Built for businesses ready to grow.",
+    url: "https://launchcrafts.in/services",
+    type: "website",
+  },
 };
 
 const services = [
@@ -78,9 +100,60 @@ const faqs = [
   },
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://launchcrafts.in" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://launchcrafts.in/services" },
+  ],
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  provider: {
+    "@type": "Organization",
+    name: "LaunchCraft",
+    url: "https://launchcrafts.in",
+  },
+  serviceType: ["Web Development", "AI Automation", "Brand Identity"],
+  areaServed: [
+    { "@type": "Country", name: "India" },
+    { "@type": "Country", name: "United Kingdom" },
+  ],
+  description:
+    "Custom web development, AI automation, and brand identity services built for businesses ready to grow.",
+};
+
 export default function ServicesPage() {
   return (
     <main className="flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
 
       {/* ── Page Header ────────────────────────────────── */}
       <section className="py-20 px-6 text-center border-b border-hairline">

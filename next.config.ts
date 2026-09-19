@@ -4,7 +4,6 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "meditroncdc.com" },
-      { protocol: "https", hostname: "madhusdhan.vercel.app" },
     ],
   },
 };

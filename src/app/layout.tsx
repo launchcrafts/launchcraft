@@ -10,14 +10,62 @@ const lora = Lora({
   subsets: ["latin"],
 });
 
+const baseUrl = "https://launchcrafts.in";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title: {
     default: "LaunchCraft — Web Development, AI Automation & Brand Identity",
     template: "%s | LaunchCraft",
   },
   description:
-    "LaunchCraft delivers custom web development, AI automation, and brand identity services across India. 4+ years of experience, 40+ projects delivered.",
+    "LaunchCraft delivers custom web development, AI automation, and brand identity services across India and the UK. 4+ years of experience, 40+ projects delivered. Next.js, React, Tailwind CSS experts.",
+  keywords: [
+    "web development",
+    "AI automation",
+    "brand identity",
+    "web design",
+    "Next.js development",
+    "React development",
+    "website development India",
+    "website development UK",
+    "custom website",
+    "SEO services",
+    "logo design",
+    "digital agency India",
+    "LaunchCraft",
+    "launchcrafts.in",
+  ],
+  authors: [{ name: "LaunchCraft", url: baseUrl }],
+  creator: "LaunchCraft",
+  publisher: "LaunchCraft",
   robots: { index: true, follow: true },
+  alternates: {
+    canonical: baseUrl,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: baseUrl,
+    siteName: "LaunchCraft",
+    title: "LaunchCraft — Web Development, AI Automation & Brand Identity",
+    description:
+      "LaunchCraft delivers custom web development, AI automation, and brand identity services across India and the UK. 4+ years of experience, 40+ projects delivered.",
+    images: [
+      {
+        url: `${baseUrl}/assets/logo.PNG`,
+        width: 800,
+        height: 260,
+        alt: "LaunchCraft — Web Development, AI Automation & Brand Identity",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LaunchCraft — Web Development, AI Automation & Brand Identity",
+    description:
+      "Custom web development, AI automation, and brand identity services. 40+ projects delivered across India and the UK.",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

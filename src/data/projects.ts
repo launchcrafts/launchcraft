@@ -1,39 +1,3 @@
-const BASE = "https://madhusdhan.vercel.app/static/media";
-
-const imageHashes: Record<number, string> = {
-  1:  "099e170a6e53cd15a3b5",
-  7:  "ccea968da61346de14e4",
-  8:  "7066cb6a83fcd61d4e30",
-  9:  "61e9a52e12cac721c56a",
-  10: "b7da9dfeef4c40223df8",
-  11: "389f673dc79444fcbe5c",
-  13: "dcf5930e49da2c427272",
-  14: "772cf420d7ee77815149",
-  15: "66c1b8ade9ddf6331f4c",
-  16: "ed1e490bfebb5dd9c403",
-  17: "f2c61568ed7cd5bf4d76",
-  19: "4d404e8fa04030a8de82",
-  20: "981b4f962f737bd2f492",
-  21: "b6c9c09c84fa46d40229",
-  22: "017d90fb2853a7d5ff02",
-  23: "8b20316f7cdb81dca4b8",
-  24: "fa7f322c29b44847880b",
-  26: "0ad92c28c7f83ce1578e",
-  27: "bfde67d0a6c680d252cc",
-  28: "cd24bce51faa6d88296e",
-  29: "ff69c5da16f886857f30",
-  30: "7ef999d2587dfe3ca2c9",
-  31: "332cddb50bec3259fbb8",
-  32: "cc9c76c437a6fabccec3",
-  33: "473cbe9c30f221efd247",
-  34: "4db331715820a7c83519",
-};
-
-function getImageUrl(id: number) {
-  const hash = imageHashes[id];
-  return hash ? `${BASE}/project${id}.${hash}.png` : "";
-}
-
 export interface Project {
   id: number;
   image: string;
@@ -90,7 +54,7 @@ const international: Project[] = [
 const otherOfficial: Project[] = [
   {
     id: 22,
-    image: getImageUrl(22),
+    image: "/projects/project22.png",
     title: "MCR CMS",
     description: "Agricultural management platform specifically designed for Mulkanoor village farming community. Built with React.js featuring crop management systems, agricultural resource sharing, and farming schedules.",
     tags: ["Agriculture", "Village Platform", "Crop Management", "React.js"],
@@ -99,7 +63,7 @@ const otherOfficial: Project[] = [
   },
   {
     id: 23,
-    image: getImageUrl(23),
+    image: "/projects/project23.png",
     title: "Maharashtra Agro",
     description: "Comprehensive agricultural platform serving Maharashtra farmers and agribusiness community with market price updates.",
     tags: ["Agriculture", "Market Platform"],
@@ -108,7 +72,7 @@ const otherOfficial: Project[] = [
   },
   {
     id: 10,
-    image: getImageUrl(10),
+    image: "/projects/project10.png",
     title: "Sacred Relm",
     description: "Spiritual e-commerce platform offering sacred items and religious products. Features elegant design, secure payments, and category-based product organization for spiritual and religious merchandise.",
     tags: ["E-commerce", "Spiritual", "React.js"],
@@ -117,7 +81,7 @@ const otherOfficial: Project[] = [
   },
   {
     id: 11,
-    image: getImageUrl(11),
+    image: "/projects/project11.png",
     title: "Sri Astro Veda",
     description: "Professional astrology services platform with multi-language support (Telugu, Hindi, English). Features Razorpay payment integration, WhatsApp API notifications, horoscope reports, and comprehensive astrology consultation services.",
     tags: ["Astrology", "Payment Integration", "WhatsApp API"],
@@ -126,7 +90,7 @@ const otherOfficial: Project[] = [
   },
   {
     id: 16,
-    image: getImageUrl(16),
+    image: "/projects/project16.png",
     title: "Surya Media",
     description: "Professional media company website showcasing digital marketing services, content creation, and brand development solutions. Features portfolio showcase, service listings, and client testimonials.",
     tags: ["Media", "Digital Marketing", "Portfolio"],
@@ -135,7 +99,7 @@ const otherOfficial: Project[] = [
   },
   {
     id: 21,
-    image: getImageUrl(21),
+    image: "/projects/project21.png",
     title: "Lakshmi Nilayam",
     description: "Professional real estate platform specializing in apartment sales and housing solutions. Built with React.js featuring property listings, virtual tours, price comparisons, and inquiry management system.",
     tags: ["Real Estate", "Property Sales", "React.js", "Apartments"],
@@ -149,7 +113,7 @@ const otherOfficial: Project[] = [
 const localHealthcare: Project[] = [
   {
     id: 7,
-    image: getImageUrl(7),
+    image: "/projects/project7.png",
     title: "Dr Joints",
     description: "A comprehensive e-commerce platform for natural joint pain relief products. Built with React.js and featuring customer testimonials, and optimized product catalog for health and wellness solutions.",
     tags: ["E-commerce", "React.js", "Health"],
@@ -158,7 +122,7 @@ const localHealthcare: Project[] = [
   },
   {
     id: 9,
-    image: getImageUrl(9),
+    image: "/projects/project9.png",
     title: "Sampoorna Rogya",
     description: "Complete healthcare solutions platform providing comprehensive health services and products. Built with React.js featuring appointment booking, product catalog for diverse customer base.",
     tags: ["Healthcare", "Next.js", "Booking System"],
@@ -167,7 +131,7 @@ const localHealthcare: Project[] = [
   },
   {
     id: 14,
-    image: getImageUrl(14),
+    image: "/projects/project14.png",
     title: "Diafree Ayush",
     description: "Specialized healthcare platform for diabetes management through Ayurvedic solutions. Features product recommendations, health tracking capabilities, and educational content for diabetes care.",
     tags: ["Healthcare", "Ayurvedic", "Diabetes Management"],
@@ -176,7 +140,7 @@ const localHealthcare: Project[] = [
   },
   {
     id: 15,
-    image: getImageUrl(15),
+    image: "/projects/project15.png",
     title: "Dr Alco Free",
     description: "Dedicated platform for alcohol addiction recovery and support. Built with React.js offering treatment programs, consultation booking, and resource materials for addiction recovery solutions.",
     tags: ["Healthcare", "Recovery", "Consultation"],
@@ -185,7 +149,7 @@ const localHealthcare: Project[] = [
   },
   {
     id: 8,
-    image: getImageUrl(8),
+    image: "/projects/project8.png",
     title: "Beyond Slim",
     description: "A modern weight management and wellness e-commerce platform offering natural health products. Features responsive design, product filtering, and integrated payment gateway for seamless customer experience.",
     tags: ["E-commerce", "Health", "Payment Gateway"],
@@ -208,7 +172,7 @@ const sampleEcommerce: Project[] = [
   },
   {
     id: 13,
-    image: getImageUrl(13),
+    image: "/projects/project13.png",
     title: "Glow Glaz",
     description: "Comprehensive ayurvedic e-commerce platform featuring natural health and wellness products. Built with React.js offering ayurvedic medicines, herbal supplements, beauty products, and traditional remedies.",
     tags: ["Ayurvedic", "E-commerce", "Health", "React.js"],
@@ -217,7 +181,7 @@ const sampleEcommerce: Project[] = [
   },
   {
     id: 32,
-    image: getImageUrl(32),
+    image: "/projects/project32.png",
     title: "ISN Electronics",
     description: "Electronics product showcase platform featuring modern design and comprehensive product information.",
     tags: ["E-commerce", "Electronics"],
@@ -226,7 +190,7 @@ const sampleEcommerce: Project[] = [
   },
   {
     id: 1,
-    image: getImageUrl(1),
+    image: "/projects/project1.png",
     title: "UPGRADE ENGLISH",
     description: "This innovative web application, built on Next.js and styled with Tailwind CSS, empowers users to enhance their English speaking skills through a seamless process of speech recording, AI-powered transcription, and intelligent analysis.",
     tags: ["Next.js", "Javascript", "2024"],
@@ -235,7 +199,7 @@ const sampleEcommerce: Project[] = [
   },
   {
     id: 20,
-    image: getImageUrl(20),
+    image: "/projects/project20.png",
     title: "Agent Sigma",
     description: "Specialized call center platform designed for agents to efficiently manage multiple client orders and process payments. Built with React.js featuring client database management, order placement interface, payment gateway integration, and real-time order tracking.",
     tags: ["Call Center", "Order Management", "Payment Processing", "React.js"],
@@ -244,7 +208,7 @@ const sampleEcommerce: Project[] = [
   },
   {
     id: 26,
-    image: getImageUrl(26),
+    image: "/projects/project26.png",
     title: "RG Pack",
     description: "Corporate website for packaging company showcasing industrial packaging solutions and company services.",
     tags: ["Corporate", "Manufacturing"],
@@ -253,7 +217,7 @@ const sampleEcommerce: Project[] = [
   },
   {
     id: 24,
-    image: getImageUrl(24),
+    image: "/projects/project24.png",
     title: "Teamworks Digital",
     description: "Creative video production service landing page showcasing professional video editing and content creation capabilities for businesses.",
     tags: ["Video Production", "Creative Services"],
@@ -262,7 +226,7 @@ const sampleEcommerce: Project[] = [
   },
   {
     id: 27,
-    image: getImageUrl(27),
+    image: "/projects/project27.png",
     title: "Teamwork Digital Agency",
     description: "Digital marketing agency platform featuring service offerings and portfolio. Project 70% complete (discontinued).",
     tags: ["Digital Marketing", "Agency"],
@@ -276,7 +240,7 @@ const sampleEcommerce: Project[] = [
 const sampleSingleProduct: Project[] = [
   {
     id: 17,
-    image: getImageUrl(17),
+    image: "/projects/project17.png",
     title: "Rice Cooker",
     description: "Interactive kitchen appliance showcase platform built with React.js. Features product demonstrations, specifications comparison, and modern responsive design for home appliance marketing and sales.",
     tags: ["React.js", "Product Showcase", "Responsive"],
@@ -285,7 +249,7 @@ const sampleSingleProduct: Project[] = [
   },
   {
     id: 19,
-    image: getImageUrl(19),
+    image: "/projects/project19.png",
     title: "Mother",
     description: "Dedicated platform for mother and child care services. Features parenting resources, health tracking, appointment scheduling, and community support built with modern React.js architecture and responsive design.",
     tags: ["Healthcare", "React.js", "Community"],
@@ -294,7 +258,7 @@ const sampleSingleProduct: Project[] = [
   },
   {
     id: 28,
-    image: getImageUrl(28),
+    image: "/projects/project28.png",
     title: "Glow Glaz",
     description: "Single product showcase landing page highlighting beauty product features and benefits with clean design.",
     tags: ["E-commerce", "Beauty"],
@@ -303,7 +267,7 @@ const sampleSingleProduct: Project[] = [
   },
   {
     id: 29,
-    image: getImageUrl(29),
+    image: "/projects/project29.png",
     title: "Lakshmi Real Estate",
     description: "Real estate campaign landing page designed to generate leads and showcase property investment opportunities.",
     tags: ["Real Estate", "Lead Generation"],
@@ -312,7 +276,7 @@ const sampleSingleProduct: Project[] = [
   },
   {
     id: 30,
-    image: getImageUrl(30),
+    image: "/projects/project30.png",
     title: "Projector Store",
     description: "E-commerce landing page for projector sales featuring product specifications, pricing, and integrated checkout system.",
     tags: ["E-commerce", "Electronics"],
@@ -321,7 +285,7 @@ const sampleSingleProduct: Project[] = [
   },
   {
     id: 31,
-    image: getImageUrl(31),
+    image: "/projects/project31.png",
     title: "Vlog Camera Store",
     description: "Product landing page for vlogging cameras with detailed specifications, pricing, and seamless checkout experience.",
     tags: ["E-commerce", "Electronics", "Photography"],
@@ -330,7 +294,7 @@ const sampleSingleProduct: Project[] = [
   },
   {
     id: 33,
-    image: getImageUrl(33),
+    image: "/projects/project33.png",
     title: "D-52 Diabetes Care",
     description: "Health product landing page focused on diabetes management solutions with clear product benefits and information.",
     tags: ["E-commerce", "Healthcare"],
@@ -339,7 +303,7 @@ const sampleSingleProduct: Project[] = [
   },
   {
     id: 34,
-    image: getImageUrl(34),
+    image: "/projects/project34.png",
     title: "Premium Shilajit",
     description: "Single-page product showcase for authentic shilajit with compressed content design, clear benefits, and compelling product presentation.",
     tags: ["E-commerce", "Wellness", "Ayurveda"],
