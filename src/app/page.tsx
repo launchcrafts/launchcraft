@@ -348,6 +348,53 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Free AI Logo Maker ───────────────────────────── */}
+      <section className="py-24 px-6 border-t border-hairline">
+        <FadeIn className="max-w-5xl mx-auto grid sm:grid-cols-[1.15fr_1fr] gap-12 items-center">
+          <div>
+            <p
+              className="text-[10px] tracking-[0.35em] uppercase text-brand-green mb-4"
+              style={{ fontFamily: "var(--font-secondary)" }}
+            >
+              New &nbsp;&middot;&nbsp; Free AI Tool
+            </p>
+            <h2 className="text-4xl sm:text-5xl italic text-foreground mb-6 leading-[1.15]">
+              Need a logo today?
+            </h2>
+            <p
+              className="text-sm text-muted leading-relaxed max-w-md mb-10"
+              style={{ fontFamily: "var(--font-secondary)" }}
+            >
+              Describe your business and our AI Logo Maker sketches four ideas in seconds. Change colours and type,
+              then download a vector SVG for free.
+            </p>
+            <Link
+              href="/logo-maker"
+              className="inline-block px-7 py-3 bg-foreground text-background text-[10px] tracking-[0.25em] uppercase hover:bg-brand-green transition-colors duration-300"
+            >
+              Try the Logo Maker &rarr;
+            </Link>
+          </div>
+          <Link
+            href="/logo-maker"
+            aria-label="Open the free AI Logo Maker"
+            className="group block bg-white border border-hairline aspect-[4/3] p-8 hover:border-foreground transition-colors duration-300"
+          >
+            <div className="h-full flex flex-col items-center justify-center gap-5">
+              <span className="text-6xl text-brand-orange leading-none group-hover:scale-110 transition-transform duration-500" aria-hidden>
+                &#9678;
+              </span>
+              <span className="text-3xl italic text-foreground">Your Brand</span>
+              <span className="flex gap-2" aria-hidden>
+                {["#2D6B2D", "#E8641A", "#1A1A1A", "#1E3A5F", "#A67C2E"].map((c) => (
+                  <span key={c} className="w-4 h-4 rounded-full" style={{ background: c }} />
+                ))}
+              </span>
+            </div>
+          </Link>
+        </FadeIn>
+      </section>
+
       {/* ── Process ──────────────────────────────────────── */}
       <section className="py-24 px-6 border-t border-hairline">
         <div className="max-w-5xl mx-auto">

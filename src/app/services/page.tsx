@@ -217,6 +217,15 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
+                  {s.title === "Brand Identity" && (
+                    <Link
+                      href="/logo-maker"
+                      className="inline-block mt-8 text-[10px] tracking-[0.25em] uppercase text-brand-orange hover:text-foreground transition-colors duration-300"
+                      style={{ fontFamily: "var(--font-secondary)" }}
+                    >
+                      Try our free AI Logo Maker &rarr;
+                    </Link>
+                  )}
                 </div>
               </FadeIn>
 

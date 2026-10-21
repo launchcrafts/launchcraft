@@ -40,6 +40,14 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          {/* Free tool — only where there's room for a sixth link */}
+          <Link
+            href="/logo-maker"
+            className="hidden xl:inline text-xs tracking-[0.2em] uppercase text-brand-orange hover:text-brand-green transition-colors duration-300"
+            style={{ fontFamily: "var(--font-secondary)" }}
+          >
+            Logo Maker
+          </Link>
         </div>
 
         {/* CTA — right, desktop only */}
@@ -89,6 +97,14 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <Link
+            href="/logo-maker"
+            onClick={() => setOpen(false)}
+            className="px-6 py-4 text-[10px] tracking-[0.3em] uppercase text-brand-orange border-b border-hairline hover:text-brand-green transition-colors duration-300"
+            style={{ fontFamily: "var(--font-secondary)" }}
+          >
+            Free Logo Maker
+          </Link>
           <Link
             href="/contact"
             onClick={() => setOpen(false)}

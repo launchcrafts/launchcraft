@@ -8,6 +8,12 @@ frontend:
       commands:
         - echo "GMAIL_USER=$GMAIL_USER" >> .env.production
         - echo "GMAIL_APP_PASSWORD=$GMAIL_APP_PASSWORD" >> .env.production
+        # AI Logo Maker (Cloudflare Workers AI)
+        - echo "CLOUDFLARE_ACCOUNT_ID=$CLOUDFLARE_ACCOUNT_ID" >> .env.production
+        - echo "CLOUDFLARE_API_TOKEN=$CLOUDFLARE_API_TOKEN" >> .env.production
+        # Optional: free Cloudflare Turnstile captcha for the Logo Maker
+        - echo "TURNSTILE_SECRET_KEY=$TURNSTILE_SECRET_KEY" >> .env.production
+        - echo "NEXT_PUBLIC_TURNSTILE_SITE_KEY=$NEXT_PUBLIC_TURNSTILE_SITE_KEY" >> .env.production
         - npm run build
   artifacts:
     baseDirectory: .next
