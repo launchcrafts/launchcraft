@@ -3,12 +3,12 @@
 
 export const INDUSTRIES = [
   { id: "healthcare", label: "Healthcare & Clinic", prompt: "healthcare clinic" },
-  { id: "aesthetics", label: "Beauty & Aesthetics", prompt: "beauty and aesthetics studio" },
+  { id: "aesthetics", label: "Beauty & Aesthetics", prompt: "wellness spa and salon" },
   { id: "food", label: "Restaurant & Café", prompt: "restaurant and café" },
   { id: "realestate", label: "Real Estate & Construction", prompt: "real estate and construction company" },
   { id: "tech", label: "Tech & SaaS", prompt: "technology and software company" },
   { id: "education", label: "Education & Coaching", prompt: "education and coaching centre" },
-  { id: "fashion", label: "Fashion & Retail", prompt: "fashion and retail brand" },
+  { id: "fashion", label: "Fashion & Retail", prompt: "luxury goods brand" },
   { id: "fitness", label: "Fitness & Wellness", prompt: "fitness and wellness studio" },
   { id: "finance", label: "Finance & Consulting", prompt: "finance and consulting firm" },
   { id: "organic", label: "Agriculture & Organic", prompt: "agriculture and organic produce brand" },
@@ -44,7 +44,7 @@ export const STYLES = [
     id: "luxury",
     label: "Luxury",
     hint: "Refined & elegant",
-    prompt: "elegant refined emblem with graceful balanced curves, high-end boutique feel",
+    prompt: "elegant refined emblem with graceful balanced curves, premium brand feel",
     font: "cormorant",
     uppercase: true,
   },

@@ -6,6 +6,8 @@ import {
   VARIANT_HINTS,
   isIndustryId,
   isStyleId,
+  type IndustryId,
+  type StyleId,
 } from "@/lib/logo-maker/options";
 import {
   AiError,
@@ -87,17 +89,36 @@ export async function POST(req: Request) {
     return fail(503, "busy", "Our AI studio has reached today's free limit.", { remaining });
   }
 
-  const results = await Promise.allSettled(
-    VARIANT_HINTS.map((_, i) => generateImage(cfg, buildPrompt(industry, style, idea, i))),
-  );
+  const aiCfg = cfg;
+  const ind = industry as IndustryId;
+  const sty = style as StyleId;
 
-  const images = results
-    .filter((r): r is PromiseFulfilledResult<string> => r.status === "fulfilled")
-    .map((r) => `data:image/jpeg;base64,${r.value}`);
+  async function runGeneration() {
+    const results = await Promise.allSettled(
+      VARIANT_HINTS.map((_, i) => generateImage(aiCfg, buildPrompt(ind, sty, idea, i))),
+    );
+    const images = results
+      .filter((r): r is PromiseFulfilledResult<string> => r.status === "fulfilled")
+      .map((r) => `data:image/jpeg;base64,${r.value}`);
+    const errors = results
+      .filter((r): r is PromiseRejectedResult => r.status === "rejected")
+      .map((r) => r.reason);
+    return { images, errors };
+  }
 
-  const errors = results
-    .filter((r): r is PromiseRejectedResult => r.status === "rejected")
-    .map((r) => r.reason);
+  let { images, errors } = await runGeneration();
+
+  // Cloudflare's content filter can produce false positives. If all images
+  // failed with NSFW errors (not quota), retry once.
+  if (
+    images.length === 0 &&
+    errors.length > 0 &&
+    errors.every((e) => e instanceof AiError && !e.quota && /nsfw|content/i.test(e.message))
+  ) {
+    console.warn("[logo-maker] All images blocked by content filter — retrying once.");
+    ({ images, errors } = await runGeneration());
+  }
+
   if (errors.length) {
     console.error(
       "[logo-maker] Some generations failed:",

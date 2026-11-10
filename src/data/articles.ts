@@ -1016,6 +1016,85 @@ export const articles: Article[] = [
 <p>Need a website that's built for local SEO from day one? A fast, well-structured site is the foundation everything else sits on — read our <a href="/articles/nextjs-vs-wordpress-for-business-websites">Next.js vs WordPress comparison</a> to understand why we choose Next.js, or explore our <a href="/services">services</a> and <a href="/contact">get in touch</a>.</p>
 `,
   },
+  {
+    slug: "ai-getting-smarter-internet-getting-dumber",
+    title:
+      "AI Is Getting Smarter. But Is the Internet Getting Dumber?",
+    excerpt:
+      "What happens when AI starts learning from AI? Exploring the feedback loop between search behaviour, content creation and information reliability.",
+    date: "2026-10-22",
+    tags: [
+      "Artificial Intelligence",
+      "Content Creation",
+      "Search",
+      "Digital Trends",
+    ],
+    content: `
+<h2>AI Is Getting Smarter. But Is the Internet Getting Dumber?</h2>
+
+<h3>What happens when AI starts learning from AI?</h3>
+
+<p><strong>Imagine a future where everyone asks questions, but fewer people share original answers.</strong></p>
+
+<p>Sounds strange? We may already be seeing the early signs.</p>
+
+<h2>4 Numbers Worth Thinking About</h2>
+
+<h3>45% &mdash; AI Answers Had Significant Issues</h3>
+
+<p>A 2025 international study found significant problems in 45% of tested AI-generated news answers, including 20% with major accuracy issues.</p>
+
+<img src="/articles/ai-internet-feedback-loop/04_AI_News_Answer_Issues.png" alt="When AI news answers go wrong — 45% had at least one significant issue, 31% had serious sourcing problems, 20% had major accuracy problems. Source: EBU + BBC, October 2025." />
+
+<p>Journalists evaluated more than 3,000 AI responses across 18 countries. Issue categories overlap; these are not hallucination rates for all AI answers.</p>
+
+<h3>40.2% &mdash; Search Traffic Decline</h3>
+
+<p>Google Search referrals to publishers dropped 40.2% year-on-year by July 2026, according to Chartbeat's publisher data.</p>
+
+<img src="/articles/ai-internet-feedback-loop/02_Search_Traffic_Decline.png" alt="Search referrals are dropping — Google Search referrals to publishers in the Chartbeat network declined from index 100 in July 2024 to 78.1 in July 2025 and 46.7 in July 2026. Source: Chartbeat 2026 Publisher Playbook; Search Engine Journal." />
+
+<p>Indexed from reported year-on-year changes; publisher network only, not the entire web.</p>
+
+<h3>50% &mdash; AI-Generated Articles</h3>
+
+<p>Research published in 2026 estimated that approximately half of newly published English-language articles in its sample were primarily AI-generated.</p>
+
+<img src="/articles/ai-internet-feedback-loop/01_AI_Article_Growth.png" alt="Growth of AI-generated articles — approximately 50% of newly published English-language articles in the sample were primarily AI-generated." />
+
+<h3>15% to 8% &mdash; Fewer Website Clicks</h3>
+
+<p>A Pew Research study found that users clicked traditional search results in 15% of visits without AI summaries, compared with just 8% when AI summaries appeared.</p>
+
+<img src="/articles/ai-internet-feedback-loop/03_Google_Click_Rates.png" alt="AI summaries, fewer website clicks — without an AI summary 15% clicked, with an AI summary only 8% clicked, approximately 47% lower click rate. Source: Pew Research Center, July 2025." />
+
+<p>900 U.S. adults, March 2025. Observational association; not proof of causation.</p>
+
+<h2>Now Connect the Dots</h2>
+
+<p><strong>People depend more on AI &rarr; Fewer website visits &rarr; Potentially less original human content &rarr; More AI-generated information &rarr; Risk of recycled errors.</strong></p>
+
+<img src="/articles/ai-internet-feedback-loop/05_AI_Information_Feedback_Loop.png" alt="What happens when AI learns from AI — a possible feedback loop: more people ask AI, fewer source website clicks, more AI-written content, recycling errors. Fresh, verified human knowledge can help break the cycle. Source: Graphite, Chartbeat, Pew Research, EBU / BBC." />
+
+<p>And here's the bigger question:</p>
+
+<p><strong>If AI learns from the internet, and the internet increasingly learns from AI, who creates tomorrow's original knowledge?</strong></p>
+
+<h2>AI Is a Tool, Not a Replacement for Thinking</h2>
+
+<p>AI isn't the enemy. It is one of humanity's most powerful tools.</p>
+
+<p>But speed without verification isn't knowledge. And content without original thinking isn't innovation.</p>
+
+<h2>The Future Needs More Than Artificial Intelligence. It Needs Human Intelligence.</h2>
+
+<p><strong>Don't just consume information. Question it. Verify it. Create something original.</strong></p>
+
+<p><em>Note: These percentages are research-based estimates from different studies and samples, not exact global figures. They should not be interpreted as proof that AI hallucinations are increasing or that original human knowledge is disappearing worldwide.</em></p>
+
+<p>Want to build a website that stands out with original, human-driven content? Explore our <a href="/services">services</a> or <a href="/contact">get in touch</a>.</p>
+`,
+  },
 ];
 
 export function getArticleBySlug(slug: string): Article | undefined {

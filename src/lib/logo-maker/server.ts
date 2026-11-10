@@ -14,7 +14,7 @@ export function buildPrompt(industry: IndustryId, style: StyleId, idea: string, 
   // fonts, so we never send it to the model (models misspell text).
   return [
     `Flat vector logo symbol for a ${ind.prompt}${subject}.`,
-    `Design it as ${hint}; ${sty.prompt}.`,
+    `${hint}; ${sty.prompt}.`,
     "Solid black shapes on a plain pure white background, one single isolated emblem, centered with generous empty margin,",
     "crisp clean edges, high contrast, flat 2D, simple enough to read at small sizes.",
     "No text, no letters, no words, no typography, no gradients, no shadows, no 3D, no mockup, no frame, no border.",
