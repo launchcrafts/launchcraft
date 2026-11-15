@@ -65,6 +65,7 @@ export const metadata: Metadata = {
     title: "LaunchCraft — Web Development, AI Automation & Brand Identity",
     description:
       "Custom web development, AI automation, and brand identity services. 40+ projects delivered across India and the UK.",
+    images: [`${baseUrl}/assets/logo.PNG`],
   },
 };
 
@@ -95,8 +96,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <meta name="google-site-verification" content="5VSx2qnZ_2qwke-6YYPQ9cZganCFjUyqOartIZvdU2s" />
       </head>
       <body className="min-h-full flex flex-col">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[200] focus:px-4 focus:py-2 focus:bg-foreground focus:text-background focus:text-sm"
+        >
+          Skip to main content
+        </a>
         <Navbar />
-        <div className="flex-1 flex flex-col">
+        <div id="main-content" className="flex-1 flex flex-col">
           {children}
         </div>
         <Footer />

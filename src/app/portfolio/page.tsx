@@ -27,6 +27,13 @@ export const metadata: Metadata = {
       "Web development, AI automation, and brand identity projects for businesses across India and the UK.",
     url: "https://launchcrafts.in/portfolio",
     type: "website",
+    images: [{ url: "https://launchcrafts.in/assets/logo.PNG", width: 800, height: 260, alt: "LaunchCraft" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio — 40+ Projects Delivered | LaunchCraft",
+    description: "Web development, AI automation, and brand identity projects across India and the UK.",
+    images: ["https://launchcrafts.in/assets/logo.PNG"],
   },
 };
 

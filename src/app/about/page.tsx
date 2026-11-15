@@ -23,6 +23,13 @@ export const metadata: Metadata = {
       "Meet the founders of LaunchCraft — combining 4+ years of web development and AI/ML expertise. 40+ projects delivered across India and the UK.",
     url: "https://launchcrafts.in/about",
     type: "website",
+    images: [{ url: "https://launchcrafts.in/assets/logo.PNG", width: 800, height: 260, alt: "LaunchCraft" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About LaunchCraft — Meet the Founders",
+    description: "Meet the founders of LaunchCraft — 4+ years of web development and AI/ML expertise.",
+    images: ["https://launchcrafts.in/assets/logo.PNG"],
   },
 };
 
@@ -64,13 +71,6 @@ const madhuStats = [
   { label: "Projects", value: "40+ Delivered" },
   { label: "Location", value: "India" },
   { label: "Speciality", value: "Web Dev / AI Automation" },
-];
-
-const durgaStats = [
-  { label: "Background", value: "AI / ML / Full-Stack" },
-  { label: "Current", value: "Cognizant (AV Systems)" },
-  { label: "Location", value: "Hyderabad, India" },
-  { label: "Speciality", value: "Machine Learning / CV" },
 ];
 
 const breadcrumbJsonLd = {
@@ -120,7 +120,7 @@ export default function AboutPage() {
             <h2 className="text-3xl sm:text-4xl italic text-foreground">Meet the Founders</h2>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-px bg-hairline border border-hairline">
+          <div className="max-w-xl mx-auto">
 
             {/* ── Madhu Sudhan ── */}
             <FadeIn from="left" className="bg-background p-6 sm:p-8 flex flex-col gap-6">
@@ -185,71 +185,6 @@ export default function AboutPage() {
               </Link>
             </FadeIn>
 
-            {/* ── Durga Jaya Ram ── */}
-            <FadeIn delay={150} className="bg-background p-6 sm:p-8 flex flex-col gap-6">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-foreground flex items-center justify-center flex-shrink-0">
-                  <span className="text-xl italic text-background">DJ</span>
-                </div>
-                <div>
-                  <h2 className="text-xl italic text-foreground">Durga Jaya Ram</h2>
-                  <p
-                    className="text-[10px] tracking-[0.2em] uppercase text-brand-green mt-0.5"
-                    style={{ fontFamily: "var(--font-secondary)" }}
-                  >
-                    Co-Founder &amp; AI Developer
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-0">
-                {durgaStats.map((item) => (
-                  <div key={item.label} className="flex justify-between items-center py-3 border-b border-hairline">
-                    <span
-                      className="text-[10px] tracking-[0.2em] uppercase text-muted"
-                      style={{ fontFamily: "var(--font-secondary)" }}
-                    >
-                      {item.label}
-                    </span>
-                    <span
-                      className="text-xs text-foreground"
-                      style={{ fontFamily: "var(--font-secondary)" }}
-                    >
-                      {item.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-col gap-4">
-                <p
-                  className="text-sm text-muted leading-relaxed"
-                  style={{ fontFamily: "var(--font-secondary)" }}
-                >
-                  AI and software developer with expertise in machine learning, computer vision, and
-                  full-stack systems. From building real-time sign language detection on Raspberry Pi
-                  to working on autonomous vehicle algorithms at Cognizant, Durga brings deep AI/ML
-                  engineering capability to LaunchCraft&rsquo;s client solutions.
-                </p>
-                <p
-                  className="text-sm text-muted leading-relaxed"
-                  style={{ fontFamily: "var(--font-secondary)" }}
-                >
-                  His background in intelligent systems, IoT, and data-driven development gives
-                  LaunchCraft an edge in building automation and AI-powered products that actually work.
-                </p>
-              </div>
-
-              <a
-                href="https://linkedin.com/in/durgajayaram"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[10px] tracking-[0.25em] uppercase text-brand-orange hover:text-foreground transition-colors duration-300"
-                style={{ fontFamily: "var(--font-secondary)" }}
-              >
-                LinkedIn Profile &rarr;
-              </a>
-            </FadeIn>
 
           </div>
         </div>

@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="relative flex items-center px-5 border-b border-hairline bg-background z-50">
+      <nav aria-label="Main navigation" className="relative flex items-center px-5 border-b border-hairline bg-background z-50">
         {/* Logo — left */}
         <Link href="/" onClick={() => setOpen(false)}>
           <Image

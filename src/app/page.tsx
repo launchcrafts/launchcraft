@@ -30,6 +30,14 @@ export const metadata: Metadata = {
       "Custom web development, AI automation, and brand identity services. 40+ projects delivered across India and the UK.",
     url: baseUrl,
     type: "website",
+    images: [{ url: `${baseUrl}/assets/logo.PNG`, width: 800, height: 260, alt: "LaunchCraft" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LaunchCraft — Web Development, AI Automation & Brand Identity",
+    description:
+      "Custom web development, AI automation, and brand identity services. 40+ projects delivered across India and the UK.",
+    images: [`${baseUrl}/assets/logo.PNG`],
   },
 };
 
@@ -97,11 +105,6 @@ const organizationJsonLd = {
       name: "Madhu Sudhan",
       jobTitle: "Founder & Lead Developer",
     },
-    {
-      "@type": "Person",
-      name: "Durga Jaya Ram",
-      jobTitle: "Co-Founder & AI Developer",
-    },
   ],
   contactPoint: {
     "@type": "ContactPoint",
@@ -152,7 +155,7 @@ export default function Home() {
   const doubled = [...marqueeItems, ...marqueeItems];
 
   return (
-    <>
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
@@ -446,9 +449,9 @@ export default function Home() {
           </FadeIn>
           <div className="grid sm:grid-cols-3 gap-px bg-hairline border border-hairline">
             {[
-              { title: "Best Websites in the World 2026", slug: "best-websites-in-the-world", tag: "Design" },
-              { title: "Next.js vs WordPress", slug: "nextjs-vs-wordpress-for-business-websites", tag: "Web Dev" },
-              { title: "7 Local SEO Tips for India", slug: "local-seo-tips-for-small-businesses-india", tag: "SEO" },
+              { title: "Could AI Trigger a Global Economic Crash?", slug: "could-ai-trigger-global-economic-crash", tag: "AI & Economy" },
+              { title: "Web Development for Business", slug: "could-ai-trigger-global-economic-crash", tag: "Web Dev" },
+              { title: "Growing Your Business Online", slug: "could-ai-trigger-global-economic-crash", tag: "Strategy" },
             ].map((a, i) => (
               <FadeIn key={a.slug} delay={i * 100} className="bg-background p-8">
                 <span
@@ -507,6 +510,6 @@ export default function Home() {
           </Link>
         </FadeIn>
       </section>
-    </>
+    </main>
   );
 }

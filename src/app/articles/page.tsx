@@ -26,6 +26,13 @@ export const metadata: Metadata = {
       "Practical advice on web development, SEO, AI automation, and growing your business online.",
     url: "https://launchcrafts.in/articles",
     type: "website",
+    images: [{ url: "https://launchcrafts.in/assets/logo.PNG", width: 800, height: 260, alt: "LaunchCraft" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Articles — Web Development, SEO & AI Insights | LaunchCraft",
+    description: "Practical advice on web development, SEO, AI automation, and growing your business online.",
+    images: ["https://launchcrafts.in/assets/logo.PNG"],
   },
 };
 

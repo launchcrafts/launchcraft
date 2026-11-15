@@ -168,7 +168,11 @@ export default async function ArticlePage({
       <section className="py-16 px-6">
         <article
           className="prose-launchcraft max-w-2xl mx-auto"
-          dangerouslySetInnerHTML={{ __html: article.content }}
+          dangerouslySetInnerHTML={{
+            __html: article.content
+              .replace(/</g, "&lt;")
+              .replace(/&lt;(\/?(h[1-6]|p|a|strong|em|ul|ol|li|blockquote|br|hr|img|figure|figcaption|table|thead|tbody|tr|th|td|span|div|section|code|pre|sup|sub)(\s[^>]*)?)>/g, "<$1>"),
+          }}
         />
       </section>
 

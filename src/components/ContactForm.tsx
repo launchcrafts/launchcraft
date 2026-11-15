@@ -160,6 +160,7 @@ export default function ContactForm() {
 
       {error && (
         <p
+          role="alert"
           className="text-sm text-red-500"
           style={{ fontFamily: "var(--font-secondary)" }}
         >

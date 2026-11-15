@@ -23,6 +23,13 @@ export const metadata: Metadata = {
       "Get in touch to discuss your web development, AI automation, or brand identity project. Response within 24 hours.",
     url: "https://launchcrafts.in/contact",
     type: "website",
+    images: [{ url: "https://launchcrafts.in/assets/logo.PNG", width: 800, height: 260, alt: "LaunchCraft" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact LaunchCraft — Start Your Project",
+    description: "Get in touch to discuss your project. Response within 24 hours.",
+    images: ["https://launchcrafts.in/assets/logo.PNG"],
   },
 };
 

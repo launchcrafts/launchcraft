@@ -16,8 +16,17 @@ export default function FadeIn({
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
+    setReduceMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  }, []);
+
+  useEffect(() => {
+    if (reduceMotion) {
+      setInView(true);
+      return;
+    }
     const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver(
@@ -31,7 +40,7 @@ export default function FadeIn({
     );
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [reduceMotion]);
 
   const initial =
     from === "left"
@@ -44,7 +53,7 @@ export default function FadeIn({
     <div
       ref={ref}
       className={className}
-      style={{
+      style={reduceMotion ? undefined : {
         opacity: inView ? 1 : 0,
         transform: inView ? "none" : initial,
         transition: `opacity 0.7s cubic-bezier(0.22,1,0.36,1) ${delay}ms, transform 0.7s cubic-bezier(0.22,1,0.36,1) ${delay}ms`,

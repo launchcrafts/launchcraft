@@ -9,6 +9,232 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: "could-ai-trigger-global-economic-crash",
+    title:
+      "Could AI Trigger the Next Global Economic Crash? What the Evidence Says",
+    excerpt:
+      "Could artificial intelligence contribute to a future economic crash? Explore research on AI jobs, consumer spending, inequality, energy costs and financial risks.",
+    date: "2026-11-10",
+    tags: [
+      "Artificial Intelligence",
+      "Global Economy",
+      "AI Jobs",
+      "Economic Research",
+      "Inequality",
+    ],
+    content: `
+<h2>Could AI Trigger the Next Global Economic Crash? What the Evidence Says</h2>
+
+<p><strong>The future of jobs, consumer spending, inequality and the global economy</strong></p>
+
+<p><em>Research updated: 10 November 2026</em></p>
+
+<p>Artificial intelligence is changing how businesses operate. Companies can now complete tasks faster, automate everyday work and reduce certain costs.</p>
+
+<p>But this progress raises a bigger economic question.</p>
+
+<p><strong>What happens if businesses become more productive while fewer people benefit from the income being created?</strong></p>
+
+<p>If large numbers of people struggle to find jobs or earn enough money, they may spend less. When customers spend less, businesses can suffer, even if those businesses have become more efficient.</p>
+
+<p>Could these changes eventually contribute to an economic crisis?</p>
+
+<p>Research suggests there are genuine risks worth monitoring. However, the evidence does not show that AI is already causing a worldwide economic collapse.</p>
+
+<h3>1. How Could AI Affect the Global Economy?</h3>
+
+<p>Imagine a company that once needed 100 employees to complete its daily operations.</p>
+
+<p>With new AI tools, it may eventually be able to perform some of the same tasks with a smaller workforce.</p>
+
+<p>The company might reduce costs and increase profits. This could benefit its owners, investors and customers.</p>
+
+<p>But what happens to workers whose jobs change or disappear?</p>
+
+<p>Some may move into new roles. Others may need new skills, accept lower wages or experience periods of unemployment.</p>
+
+<p>If this happens across many industries without enough new opportunities, household income and consumer spending could weaken.</p>
+
+<p>This creates a possible economic feedback loop:</p>
+
+<p><strong>Less hiring or job displacement &rarr; Lower household income &rarr; Reduced consumer spending &rarr; Weaker business revenue &rarr; Further pressure on employment.</strong></p>
+
+<p>This is a possible scenario, not an established forecast. Its outcome depends on whether AI also creates jobs, lowers prices, increases wages and supports new businesses.</p>
+
+<h3>2. What Does Research Actually Say About AI and Jobs?</h3>
+
+<p>According to the <a href="https://www.imf.org/en/Blogs/Articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity" target="_blank" rel="noopener noreferrer">International Monetary Fund's 2024 research</a>, almost 40% of global employment is exposed to AI.</p>
+
+<p>In advanced economies, the figure is around 60%.</p>
+
+<p>But exposure does not mean that those jobs will disappear. AI may replace some tasks while helping workers perform others more efficiently.</p>
+
+<p>The International Labour Organization's <a href="https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure" target="_blank" rel="noopener noreferrer">2025 global study</a> found that one in four workers had some exposure to generative AI. Only 3.3% of global employment fell into its highest exposure category.</p>
+
+<p>More recent evidence also shows a mixed picture.</p>
+
+<p>A <a href="https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/" target="_blank" rel="noopener noreferrer">Stanford working paper revised in August 2026</a> found no widespread, economy-wide job displacement in its US payroll sample. However, employment among workers aged 22&ndash;25 in highly AI-exposed occupations was 19% below a comparison trend based on less-exposed workers.</p>
+
+<p>The study suggests that reduced hiring of young workers may be an important early signal.</p>
+
+<p><strong>The concern is not simply whether AI removes jobs. It is whether new opportunities appear quickly enough for people entering or moving through the workforce.</strong></p>
+
+<h3>3. The Consumer Spending Problem</h3>
+
+<p>Consumer spending is an important part of economic activity.</p>
+
+<p>People earn money through employment, businesses, investments and other sources. They use that income to purchase products and services.</p>
+
+<p>Businesses depend on those purchases to generate revenue.</p>
+
+<p>AI could make companies more efficient, but efficiency alone does not guarantee strong customer demand.</p>
+
+<p>Consider an online business that uses AI to manage customer service, advertising, product descriptions and operations.</p>
+
+<p>Its operating costs may decrease.</p>
+
+<p>But if its customers experience falling incomes or job uncertainty, they may delay purchases or choose cheaper alternatives.</p>
+
+<p>The business could become more efficient while still experiencing weaker sales.</p>
+
+<p>This is why the relationship between productivity, household income and consumer demand deserves close attention.</p>
+
+<p>At the same time, AI could make products cheaper and create new services, supporting purchasing power and demand. Both effects matter.</p>
+
+<h3>4. Could AI Make Wealth Inequality Worse?</h3>
+
+<p>One major concern is that the economic rewards of AI may not be shared equally.</p>
+
+<p>Businesses that own valuable AI technologies, computing infrastructure and intellectual property could capture substantial benefits.</p>
+
+<p>Workers who successfully use AI may also become more productive and earn higher wages.</p>
+
+<p>Others may face greater competition or reduced demand for their skills.</p>
+
+<p>The IMF has warned that AI could deepen inequality within and between countries, particularly where access to training, technology and infrastructure is uneven.</p>
+
+<p>This does not automatically mean an economic crash.</p>
+
+<p>However, growing inequality can become an economic and social challenge when large sections of the population struggle to participate in growth.</p>
+
+<h3>5. The Hidden Cost of AI: Electricity, Data Centres and Infrastructure</h3>
+
+<p>AI is not only about software.</p>
+
+<p>Behind every major AI system are physical data centres, advanced chips, cooling systems, electricity networks and substantial investment.</p>
+
+<figure>
+<img src="/articles/could-ai-trigger-global-economic-crash/data-centre.jpg" alt="Rows of computer servers in a major research data centre" />
+<figcaption>Rows of computer servers in a major research data centre</figcaption>
+</figure>
+
+<p>These systems require resources.</p>
+
+<p>The <a href="https://www.iea.org/reports/key-questions-on-energy-and-ai" target="_blank" rel="noopener noreferrer">International Energy Agency's April 2026 report</a> estimates that data centres consumed approximately 485 terawatt-hours of electricity in 2025.</p>
+
+<p>Its central projection reaches approximately 950 terawatt-hours by 2030, representing around 3% of global electricity demand.</p>
+
+<figure>
+<img src="/articles/could-ai-trigger-global-economic-crash/electricity-consumption.png" alt="Global data centre electricity consumption" />
+<figcaption>Global data centre electricity consumption</figcaption>
+</figure>
+
+<p>Greater electricity demand can create pressure on local grids, energy infrastructure and investment requirements.</p>
+
+<p>Water use for cooling is another concern, although its effects vary considerably by location and technology.</p>
+
+<p>There are opportunities too. AI can improve electricity-grid management, reduce industrial energy waste and help create more efficient systems.</p>
+
+<p>The economic question is whether infrastructure can expand affordably and whether AI produces enough value to justify its growing costs.</p>
+
+<h3>6. Could the AI Investment Boom Create Financial Risks?</h3>
+
+<p>The global economy is also experiencing substantial investment in AI infrastructure.</p>
+
+<p>Technology companies and investors are spending heavily on data centres, computing systems and AI services.</p>
+
+<p>Much of this investment is based on expectations of future revenue and productivity growth.</p>
+
+<p>But what happens if those expectations prove too optimistic?</p>
+
+<p>In its <a href="https://www.imf.org/en/publications/gfsr/issues/2026/10/13/global-financial-stability-report-october-2026" target="_blank" rel="noopener noreferrer">October 2026 Global Financial Stability Report</a>, the IMF identified an AI-related market correction as a potential financial risk.</p>
+
+<p>If AI-related profits disappoint, the market values of affected companies could fall.</p>
+
+<p>Debt and concentrated investments could amplify those losses, potentially spreading financial stress.</p>
+
+<p>A stock market correction is not automatically an economic recession. But financial losses can affect investment, lending, business confidence and consumer spending.</p>
+
+<p>This makes the relationship between AI investment and real economic returns especially important.</p>
+
+<h3>7. Is a Global Economic Crash Actually Coming?</h3>
+
+<p>There is currently insufficient evidence to conclude that AI will cause a global economic crash.</p>
+
+<p>The IMF's October 2026 <em>World Economic Outlook</em> projects global economic growth of 3.1% in 2026 and 3.4% in 2027.</p>
+
+<p>These are projections of continued global growth, not a predicted worldwide recession.</p>
+
+<p>However, the IMF also identifies downside risks, including geopolitical conflict, financial vulnerabilities, trade tensions and changes in expectations surrounding AI.</p>
+
+<p>A more severe downturn could become possible if several economic pressures occur together.</p>
+
+<p>For example, weak employment growth, falling consumer spending, an AI investment correction and tighter credit conditions could reinforce one another.</p>
+
+<p>But that is a risk scenario, not something research has established will happen.</p>
+
+<h3>8. What Should We Watch Over the Next Few Years?</h3>
+
+<p>Instead of attempting to predict the exact date of a crisis, it is more useful to monitor measurable economic signals.</p>
+
+<p>Pay particular attention to youth employment and entry-level hiring in AI-exposed industries, real wage growth, household spending, consumer debt, AI company profitability and borrowing, and electricity infrastructure costs.</p>
+
+<p>It is also important to compare these indicators across countries and over time.</p>
+
+<p>A single company's layoffs or a sudden stock market decline cannot prove that AI is causing a global economic crisis.</p>
+
+<p>Researchers need consistent evidence showing how technology adoption relates to employment, income, investment and growth.</p>
+
+<h3>Final Thoughts: The Real Question Is Who Benefits From AI</h3>
+
+<p>Artificial intelligence could help the global economy grow faster, improve productivity and create new opportunities.</p>
+
+<p>But that outcome is not guaranteed.</p>
+
+<p>The transition could also produce difficult adjustments for workers, businesses and governments.</p>
+
+<p><strong>The biggest question is not simply whether AI makes companies more productive. It is whether that productivity leads to broader economic prosperity.</strong></p>
+
+<p>If new technology creates value while people continue to find meaningful work, earn sustainable incomes and purchase goods and services, AI could strengthen the economy.</p>
+
+<p>If the benefits remain concentrated while employment opportunities and purchasing power weaken, economic pressures may increase.</p>
+
+<p>The future is not predetermined.</p>
+
+<p>Understanding the evidence, recognising uncertainty and monitoring early warning signs will be more useful than assuming either an economic boom or an inevitable collapse.</p>
+
+<h3>Original Research and Further Reading</h3>
+
+<p><strong>International Monetary Fund</strong></p>
+<ul>
+<li><a href="https://www.imf.org/en/Blogs/Articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity" target="_blank" rel="noopener noreferrer">AI Will Transform the Global Economy &mdash; January 2024</a></li>
+<li><a href="https://www.imf.org/en/Publications/WEO/Issues/2026/10/13/world-economic-outlook-october-2026" target="_blank" rel="noopener noreferrer">World Economic Outlook &mdash; October 2026</a></li>
+<li><a href="https://www.imf.org/en/publications/gfsr/issues/2026/10/13/global-financial-stability-report-october-2026" target="_blank" rel="noopener noreferrer">Global Financial Stability Report &mdash; October 2026</a></li>
+</ul>
+
+<p><strong>Employment Research</strong></p>
+<ul>
+<li><a href="https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure" target="_blank" rel="noopener noreferrer">ILO &mdash; Generative AI and Jobs, 2025</a></li>
+<li><a href="https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/" target="_blank" rel="noopener noreferrer">Stanford &mdash; Recent Employment Effects of AI, revised August 2026</a></li>
+</ul>
+
+<p><strong>Energy Research</strong></p>
+<ul>
+<li><a href="https://www.iea.org/reports/key-questions-on-energy-and-ai" target="_blank" rel="noopener noreferrer">International Energy Agency &mdash; Key Questions on Energy and AI, April 2026</a></li>
+</ul>
+`,
+  },
+  {
     slug: "ai-automation-for-small-businesses",
     title:
       "AI Automation for Small Businesses: What Can Actually Be Automated?",

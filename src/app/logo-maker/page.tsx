@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
-import LogoMaker from "@/components/logo-maker/LogoMaker";
+
+const LogoMaker = dynamic(() => import("@/components/logo-maker/LogoMaker"), {
+  loading: () => (
+    <div className="px-6 py-20 text-center">
+      <p className="text-sm text-muted" style={{ fontFamily: "var(--font-secondary)" }}>Loading logo maker...</p>
+    </div>
+  ),
+});
 
 const baseUrl = "https://launchcrafts.in";
 const url = `${baseUrl}/logo-maker`;
@@ -27,6 +35,13 @@ export const metadata: Metadata = {
       "Describe your business, pick a style, and get four AI-designed logo ideas. Download vector SVG or HD PNG free.",
     url,
     type: "website",
+    images: [{ url: `${baseUrl}/assets/logo.PNG`, width: 800, height: 260, alt: "LaunchCraft AI Logo Maker" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free AI Logo Maker — LaunchCraft",
+    description: "Describe your business, pick a style, and get four AI-designed logo ideas. Free SVG & PNG download.",
+    images: [`${baseUrl}/assets/logo.PNG`],
   },
 };
 

@@ -46,7 +46,7 @@ export default function Footer() {
           >
             © 2025 LaunchCraft · launchcrafts.in
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 flex-wrap">
             <a
               href="https://www.instagram.com/launchcrafts.in/"
               target="_blank"
@@ -56,12 +56,20 @@ export default function Footer() {
             >
               Instagram
             </a>
-            <p
-              className="text-[10px] tracking-[0.15em] uppercase text-muted"
+            <Link
+              href="/privacy"
+              className="text-[10px] tracking-[0.2em] uppercase text-muted hover:text-foreground transition-colors duration-300"
               style={{ fontFamily: "var(--font-secondary)" }}
             >
-              Web Development &nbsp;·&nbsp; AI Automation &nbsp;·&nbsp; Brand Identity
-            </p>
+              Privacy
+            </Link>
+            <Link
+              href="/terms"
+              className="text-[10px] tracking-[0.2em] uppercase text-muted hover:text-foreground transition-colors duration-300"
+              style={{ fontFamily: "var(--font-secondary)" }}
+            >
+              Terms
+            </Link>
           </div>
         </div>
       </div>
