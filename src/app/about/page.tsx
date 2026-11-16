@@ -5,30 +5,29 @@ import FadeIn from "@/components/FadeIn";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet the founders of LaunchCraft — Madhu Sudhan (full-stack developer) and Durga Jaya Ram (AI developer) — combining 4+ years of web development and AI/ML expertise.",
+    "LaunchCraft is a boutique digital agency combining 4+ years of web development and AI/ML expertise. 40+ projects delivered across India and the UK.",
   keywords: [
     "about LaunchCraft",
     "web development team",
-    "Madhu Sudhan developer",
-    "Durga Jaya Ram AI developer",
-    "digital agency founders",
+    "digital agency India",
+    "AI web development agency",
     "India web development agency",
   ],
   alternates: {
     canonical: "https://launchcrafts.in/about",
   },
   openGraph: {
-    title: "About LaunchCraft — Meet the Founders",
+    title: "About LaunchCraft — Boutique Digital Agency",
     description:
-      "Meet the founders of LaunchCraft — combining 4+ years of web development and AI/ML expertise. 40+ projects delivered across India and the UK.",
+      "LaunchCraft is a boutique digital agency combining 4+ years of web development and AI/ML expertise. 40+ projects delivered across India and the UK.",
     url: "https://launchcrafts.in/about",
     type: "website",
     images: [{ url: "https://launchcrafts.in/assets/logo.PNG", width: 800, height: 260, alt: "LaunchCraft" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About LaunchCraft — Meet the Founders",
-    description: "Meet the founders of LaunchCraft — 4+ years of web development and AI/ML expertise.",
+    title: "About LaunchCraft — Boutique Digital Agency",
+    description: "LaunchCraft — a boutique digital agency with 4+ years of web development and AI/ML expertise.",
     images: ["https://launchcrafts.in/assets/logo.PNG"],
   },
 };
@@ -66,13 +65,6 @@ const timeline = [
   { year: "2025", event: "40+ projects delivered. Full-service digital agency, fully operational." },
 ];
 
-const madhuStats = [
-  { label: "Experience", value: "4+ Years" },
-  { label: "Projects", value: "40+ Delivered" },
-  { label: "Location", value: "India" },
-  { label: "Speciality", value: "Web Dev / AI Automation" },
-];
-
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -108,86 +100,6 @@ export default function AboutPage() {
             web development expertise, AI engineering, and 4+ years of real-world project experience.
           </p>
         </FadeIn>
-      </section>
-
-      {/* ── Founders ───────────────────────────────────── */}
-      <section className="py-16 sm:py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <FadeIn className="text-center mb-14">
-            <p className="text-[10px] tracking-[0.35em] uppercase text-brand-green mb-4">
-              The Team
-            </p>
-            <h2 className="text-3xl sm:text-4xl italic text-foreground">Meet the Founders</h2>
-          </FadeIn>
-
-          <div className="max-w-xl mx-auto">
-
-            {/* ── Madhu Sudhan ── */}
-            <FadeIn from="left" className="bg-background p-6 sm:p-8 flex flex-col gap-6">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-foreground flex items-center justify-center flex-shrink-0">
-                  <span className="text-xl italic text-background">MS</span>
-                </div>
-                <div>
-                  <h2 className="text-xl italic text-foreground">Madhu Sudhan</h2>
-                  <p
-                    className="text-[10px] tracking-[0.2em] uppercase text-brand-green mt-0.5"
-                    style={{ fontFamily: "var(--font-secondary)" }}
-                  >
-                    Founder &amp; Lead Developer
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-0">
-                {madhuStats.map((item) => (
-                  <div key={item.label} className="flex justify-between items-center py-3 border-b border-hairline">
-                    <span
-                      className="text-[10px] tracking-[0.2em] uppercase text-muted"
-                      style={{ fontFamily: "var(--font-secondary)" }}
-                    >
-                      {item.label}
-                    </span>
-                    <span
-                      className="text-xs text-foreground"
-                      style={{ fontFamily: "var(--font-secondary)" }}
-                    >
-                      {item.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-col gap-4">
-                <p
-                  className="text-sm text-muted leading-relaxed"
-                  style={{ fontFamily: "var(--font-secondary)" }}
-                >
-                  I started coding in 2021 with a single goal: build things that actually work for businesses.
-                  Over four years, I&rsquo;ve delivered more than 40 projects — from pediatric healthcare centers
-                  in Vijayawada to doctor-led aesthetic clinics in Newcastle, UK.
-                </p>
-                <p
-                  className="text-sm text-muted leading-relaxed"
-                  style={{ fontFamily: "var(--font-secondary)" }}
-                >
-                  LaunchCraft was founded on the belief that small and mid-sized businesses deserve agency-quality
-                  digital products — without the agency bureaucracy.
-                </p>
-              </div>
-
-              <Link
-                href="/portfolio"
-                className="text-[10px] tracking-[0.25em] uppercase text-brand-orange hover:text-foreground transition-colors duration-300"
-                style={{ fontFamily: "var(--font-secondary)" }}
-              >
-                View Portfolio &rarr;
-              </Link>
-            </FadeIn>
-
-
-          </div>
-        </div>
       </section>
 
       {/* ── Timeline ───────────────────────────────────── */}
